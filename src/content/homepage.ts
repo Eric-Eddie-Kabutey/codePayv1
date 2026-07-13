@@ -1,3 +1,5 @@
+import { video } from "framer-motion/client";
+
 export const seo = {
   title: 'CodePay — Remittance and Banking Infrastructure for Africa',
   description:
@@ -13,6 +15,8 @@ export const hero = {
   imageUrl:
     'https://cdn.prod.website-files.com/62e338d39de4c75ceb960585/63187552840368fe09a74d71_Homepage%20-%20Hero.png',
   imageAlt: 'CodePay platform dashboard',
+  videoUrl:
+    'https://player.cloudinary.com/embed/?cloud_name=dg41c7v3d&public_id=new-frog_txzprq&player%5Bautoplay%5D=true&player%5Bloop%5D=true&player%5Bmuted%5D=true&player%5Bplaysinline%5D=true&player%5BautoplayMode%5D=always&player%5Bcontrols%5D=false&player%5BbigPlayButton%5D=false&player%5BshowLogo%5D=false&player%5BhideContextMenu%5D=true',
 };
 
 export const trustBar = {
