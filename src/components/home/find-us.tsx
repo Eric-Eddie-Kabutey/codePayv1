@@ -15,10 +15,10 @@ const trustValues: {
   suffix?: string;
   color: string;
 }[] = [
-  { target: 15, suffix: "+", color: "text-theme-green-900" },
-  { target: 100, suffix: "%", color: "text-theme-purple-900" },
-  { color: "text-theme-blue-900" },
-];
+    { target: 15, suffix: "+", color: "text-theme-green-900" },
+    { target: 100, suffix: "%", color: "text-theme-purple-900" },
+    { color: "text-theme-blue-900" },
+  ];
 
 function CountUpStat({ target, suffix }: { target: number; suffix: string }) {
   const ref = useRef<HTMLSpanElement>(null);
@@ -33,7 +33,7 @@ function CountUpStat({ target, suffix }: { target: number; suffix: string }) {
       ease: "easeOut",
     });
     return controls.stop;
-  }, [isInView, count, target]);
+  }, [ isInView, count, target ]);
 
   return (
     <span ref={ref}>
@@ -68,22 +68,45 @@ function AnimatedAI() {
 
 function TrustAndIdentity() {
   return (
-    <section className="bg-white">
+    <section className="bg-white overflow-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="py-20 sm:py-24 lg:py-28">
-          <div className="grid gap-12 lg:grid-cols-12 lg:items-start lg:gap-16">
-            {/* Left headline */}
-            <div className="lg:col-span-5">
-              <h2 className="max-w-xl text-4xl font-light leading-tight tracking-tight text-black sm:text-5xl lg:text-6xl">
-                {whatIsCodePay.headline}
-              </h2>
+
+          {/* Centered Heading */}
+          <div className="text-center mb-16 lg:mb-24">
+            <h2 className="mx-auto max-w-3xl text-4xl font-light leading-tight tracking-tight text-black sm:text-5xl lg:text-6xl">
+              {whatIsCodePay.headline}
+            </h2>
+          </div>
+
+          {/* Two Column Layout Separated by Dotted Line */}
+          <div className="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
+
+            {/* Left Column: Asset (Trusted Logos) */}
+            <div className="flex flex-col items-center justify-center lg:border-r-2 lg:border-dotted lg:border-gray-300 lg:pr-16 py-4">
+              <h4 className="text-center text-lg sm:text-xl font-medium text-[#2d405e] mb-10">
+                Trusted by businesses and developers across Ghana and beyond.
+              </h4>
+
+              {/* Logos Grid/Flex - Replace 'src' with your actual logo paths */}
+              <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-10 opacity-70 grayscale">
+                <img src="/assets/logos/alliancefrancaise.svg" alt="MC" className="h-10 sm:h-12 object-contain" />
+                <img src="/assets/logos/perez.svg" alt="Teachers" className="h-10 sm:h-12 object-contain" />
+                <img src="/assets/logos/nova.svg" alt="E" className="h-10 sm:h-12 object-contain" />
+                <img src="/assets/logos/vvu.svg" alt="Shield" className="h-10 sm:h-12 object-contain" />
+                <img src="/assets/logos/zenith-bank.svg" alt="Zenith" className="h-10 sm:h-12 object-contain" />
+                <img src="/assets/logos/alliancefrancaise.svg" alt="Alliance Francaise" className="h-10 sm:h-12 object-contain" />
+                <img src="/assets/logos/perez.svg" alt="Perez Chapel" className="h-10 sm:h-12 object-contain" />
+                <img src="/assets/logos/vvu.svg" alt="VVU" className="h-10 sm:h-12 object-contain" />
+                <img src="/assets/logos/nova.svg" alt="Nov" className="h-10 sm:h-12 object-contain" />
+              </div>
             </div>
 
-            {/* Right trust stats */}
-            <div className="lg:col-span-7 mt-4">
+            {/* Right Column: Source (Original Stats) */}
+            <div className="lg:pl-4">
               <div className="grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-3 lg:gap-x-10">
                 {trustBar.items.slice(0, 3).map((item, index) => {
-                  const stat = trustValues[index];
+                  const stat = trustValues[ index ];
 
                   return (
                     <div key={item.text} className="min-w-0">
@@ -108,25 +131,9 @@ function TrustAndIdentity() {
                 })}
               </div>
             </div>
+
           </div>
 
-          {/* Optional body text below */}
-          {/* <div className="mt-16 grid gap-10 lg:grid-cols-12 lg:gap-16">
-            <div className="hidden lg:col-span-5 lg:block" />
-
-            <div className="lg:col-span-7">
-              <div className="max-w-3xl space-y-5">
-                {whatIsCodePay.body.split("\n\n").map((para, index) => (
-                  <p
-                    key={index}
-                    className="text-lg leading-relaxed text-gray-700 sm:text-xl"
-                  >
-                    {para}
-                  </p>
-                ))}
-              </div>
-            </div>
-          </div> */}
         </div>
       </div>
     </section>
