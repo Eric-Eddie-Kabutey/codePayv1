@@ -5,30 +5,22 @@ import { hero } from "@/content/homepage";
 
 function HomeHero() {
   return (
-    <section className="max-w-7xl mx-auto px-4 sm:px-6 py-20 lg:py-40">
-      <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
-        {/* Text */}
-        <div className="lg:w-1/2 space-y-7">
+    <section className="relative w-full pt-20 pb-28 lg:pt-32 px-4 sm:px-6 overflow-hidden">
+      <div className="max-w-7xl mx-auto flex flex-col items-center text-center">
+
+        {/* Text Area */}
+        <div className="max-w-4xl space-y-7 z-10">
+          {/* Kept original font sizes & weight */}
           <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-light leading-tight">
             {hero.headline}
           </h1>
-          <p className="text-lg sm:text-xl lg:text-2xl text-gray-700 leading-relaxed">
+          {/* Kept original font sizes */}
+          <p className="text-lg sm:text-xl lg:text-2xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
             {hero.subheadline}
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 pt-1">
-            {/* <Link
-              href={hero.primaryCTA.href}
-              className="inline-block text-center bg-navy-900 text-white text-base font-semibold px-7 py-3.5 rounded-lg hover:bg-navy-700 transition-colors"
-            >
-              {hero.primaryCTA.label}
-            </Link>
-            <Link
-              href={hero.secondaryCTA.href}
-              className="inline-block text-center border border-navy-200 text-navy-900 text-base font-semibold px-7 py-3.5 rounded-lg hover:bg-navy-50 transition-colors"
-            >
-              {hero.secondaryCTA.label}
-            </Link> */}
 
+          {/* Buttons - Kept original button UI, centered */}
+          <div className="flex flex-col sm:flex-row justify-center gap-3 pt-4">
             <Link
               href={hero.primaryCTA.href}
               className="group/link inline-flex items-center justify-between gap-6 rounded-full border border-white/25 bg-theme-blue-900 py-2 px-6 text-base font-medium text-black backdrop-blur-md transition-all duration-300 hover:border-transparent hover:bg-theme-purple-900 hover:text-[#071B2D] sm:min-w-[240px]"
@@ -73,15 +65,48 @@ function HomeHero() {
           </div>
         </div>
 
-        {/* Image */}
-        <div className="lg:w-1/2">
-          <img
-            src={hero.imageUrl}
-            alt={hero.imageAlt}
-            className="w-full h-auto max-h-[460px] object-contain"
-            loading="eager"
-          />
+        {/* Feature Navigation Links from the Image UI */}
+        <div className="hidden w-full mt-24 mb-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-left z-10">
+          <div className="bg-white/20 rounded-2xl p-6 shadow-sm transition-colors cursor-default">
+            <h3 className="font-bold text-lg mb-1.5 text-white">FROG Messaging</h3>
+            <p className="text-sm text-white/80 leading-snug">
+              Powerful SMS, USSD, Voice & IVR Messaging
+            </p>
+          </div>
+          <div className="rounded-2xl p-6 hover:bg-white/10 transition-colors cursor-pointer">
+            <h3 className="font-bold text-lg mb-1.5 text-white">Redde Payments</h3>
+            <p className="text-sm text-white/80 leading-snug">
+              Secure Online Payments & Collections
+            </p>
+          </div>
+          <div className="rounded-2xl p-6 hover:bg-white/10 transition-colors cursor-pointer">
+            <h3 className="font-bold text-lg mb-1.5 text-white">School Management<br className="hidden lg:block" /> Platform</h3>
+            <p className="text-sm text-white/80 leading-snug">
+              Efficient School Management System
+            </p>
+          </div>
+          <div className="rounded-2xl p-6 hover:bg-white/10 transition-colors cursor-pointer">
+            <h3 className="font-bold text-lg mb-1.5 text-white">GH Topups</h3>
+            <p className="text-sm text-white/80 leading-snug">
+              Buy WASSCE, BECE AND NOVDEC Vouchers
+            </p>
+          </div>
         </div>
+
+        {/* Replaced standard Image with the Video element */}
+        <div className="w-full  mx-auto mt-16 rounded-t-2xl overflow-hidden shadow-2xl translate-y-4 lg:translate-y-8 border-t border-x border-white/20">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-auto object-cover"
+          >
+            <source src="/assets/videos/new-frog_txzprq.webm" type="video/webm" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
       </div>
     </section>
   );
