@@ -1,0 +1,22 @@
+<svg viewBox="0 0 600 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+  <title>CodePay - Typography Wordmark</title>
+
+  <!-- Define font styling for fallback -->
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    </style>
+  </defs>
+
+  <!-- Primary Navy Brand Color -->
+  <text
+    x="30"
+    y="90"
+    font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+    font-size="80"
+    font-weight="700"
+    fill="#3d81b4"
+    letter-spacing="-2"
+    text-anchor="start"
+  >CodePay</text>
+</svg>

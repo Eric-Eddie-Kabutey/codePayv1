@@ -1,0 +1,29 @@
+<svg viewBox="0 0 300 280" xmlns="http://www.w3.org/2000/svg" width="300" height="280">
+  <!-- Icon (top) -->
+  <g id="icon">
+    <!-- Main circle -->
+    <circle cx="150" cy="70" r="50" fill="#3d81b4"/>
+
+    <!-- Inner cutout -->
+    <circle cx="150" cy="70" r="30" fill="white"/>
+
+    <!-- Top accent node -->
+    <circle cx="150" cy="25" r="9" fill="#14b8a6"/>
+
+    <!-- Right accent node -->
+    <circle cx="200" cy="70" r="9" fill="#14b8a6"/>
+
+    <!-- Bottom accent node -->
+    <circle cx="153" cy="115" r="7" fill="#14b8a6" opacity="0.8"/>
+
+    <!-- Subtle lines -->
+    <line x1="158" y1="32" x2="195" y2="65" stroke="#14b8a6" stroke-width="1.5" opacity="0.25" stroke-linecap="round"/>
+    <line x1="195" y1="75" x2="162" y2="110" stroke="#14b8a6" stroke-width="1.5" opacity="0.2" stroke-linecap="round"/>
+  </g>
+
+  <!-- Wordmark (middle) -->
+  <text x="50" y="180" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="32" font-weight="700" fill="#0f2849">CodePay</text>
+
+  <!-- Tagline (bottom) -->
+  <text x="30" y="205" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" font-weight="400" fill="#3d81b4">Africa's Fintech Infrastructure</text>
+</svg>

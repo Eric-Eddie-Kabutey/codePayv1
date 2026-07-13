@@ -1,0 +1,16 @@
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" width="64" height="64">
+  <!-- Main circle (navy blue) -->
+  <circle cx="32" cy="32" r="22.5" fill="#3d81b4"/>
+
+  <!-- Inner cutout (creates C shape) -->
+  <circle cx="32" cy="32" r="13.75" fill="white"/>
+
+  <!-- Top accent node (teal) -->
+  <circle cx="32" cy="11" r="3.5" fill="#14b8a6"/>
+
+  <!-- Right accent node (teal) -->
+  <circle cx="52.5" cy="32" r="3" fill="#14b8a6"/>
+
+  <!-- Bottom accent node (teal) -->
+  <circle cx="32.5" cy="54" r="2.5" fill="#14b8a6" opacity="0.8"/>
+</svg>

@@ -1,0 +1,15 @@
+<svg viewBox="0 0 600 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+  <title>CodePay - Typography Wordmark (White)</title>
+
+  <!-- White version for dark backgrounds -->
+  <text
+    x="30"
+    y="90"
+    font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+    font-size="80"
+    font-weight="700"
+    fill="#ffffff"
+    letter-spacing="-2"
+    text-anchor="start"
+  >CodePay</text>
+</svg>

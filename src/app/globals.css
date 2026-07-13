@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy-50:  #f0f4f8;
+  --color-navy-100: #d9e2ec;
+  --color-navy-200: #b2c9de;
+  --color-navy-300: #8bb1d0;
+  --color-navy-400: #6499c2;
+  --color-navy-500: #3d81b4;
+  --color-navy-600: #3d81b4;
+  --color-navy-700: #2d6299;
+  --color-navy-800: #1d437e;
+  --color-navy-900: #0f2849;
+
+  --color-teal-300: #5ee7df;
+  --color-teal-400: #2dd4cf;
+  --color-teal-500: #14b8a6;
+  --color-teal-600: #0d9488;
+
+  --color-neutral-50:  #f9fafb;
+  --color-neutral-100: #f3f4f6;
+  --color-neutral-200: #e5e7eb;
+  --color-neutral-300: #d1d5db;
+  --color-neutral-400: #9ca3af;
+  --color-neutral-500: #6b7280;
+  --color-neutral-600: #4b5563;
+  --color-neutral-700: #374151;
+  --color-neutral-800: #1f2937;
+  --color-neutral-900: #111827;
+
+  --color-theme-amber-900: #F1D8AE;
+  --color-theme-green-900: #CBEBD5;
+  --color-theme-purple-900: #DACBF4;
+  --color-theme-blue-900: #C9DFF4;
+}
+
+.hero-bg {
+    background: url("/assets/images/backimagepom.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.team-bg {
+    background: url("/assets/images/team-bg-img.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.hero-news-bg {
+    background: url("/assets/images/heronew.png");
+    background-size: cover;
+    background-position: center;    
+    background-position-x: right;
+    background-position-y: top;
+    background-repeat: no-repeat;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+
+@keyframes differentiator-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-differentiator-scroll {
+  animation: differentiator-scroll 28s linear infinite;
+}
+
+
+@keyframes stats-marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-stats-marquee {
+  animation: stats-marquee 28s linear infinite;
+}

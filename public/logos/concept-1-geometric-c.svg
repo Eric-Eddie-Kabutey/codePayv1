@@ -1,0 +1,6 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <title>Concept 1: Geometric C Mark</title>
+  <!-- Pomelo-style geometric C -->
+  <path d="M 160 50 Q 160 50 140 40 Q 100 20 60 40 Q 30 55 30 100 Q 30 145 60 160 Q 100 180 140 160 Q 160 150 160 150"
+        fill="none" stroke="#3d81b4" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

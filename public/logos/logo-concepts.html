@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodePay Logo Concepts</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #eef2f7 100%);
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 60px 40px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 700;
+            color: #0f2849;
+            margin-bottom: 12px;
+            letter-spacing: -1px;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: #3d81b4;
+            font-weight: 500;
+        }
+
+        .concepts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 60px;
+        }
+
+        .concept {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .concept:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+        }
+
+        .concept-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #0f2849;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .concept-number {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: #3d81b4;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .concept-description {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 32px;
+            line-height: 1.5;
+        }
+
+        .scales-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 16px;
+        }
+
+        .logo-scales {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .logo-scale {
+            background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+            border-radius: 12px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #e5e7eb;
+            min-height: 100px;
+            position: relative;
+            transition: background 0.3s ease;
+        }
+
+        .logo-scale:hover {
+            background: linear-gradient(135deg, #f0f4f8 0%, #e8ecf2 100%);
+        }
+
+        .logo-scale svg {
+            height: 100%;
+            width: 100%;
+        }
+
+        .scale-size {
+            position: absolute;
+            bottom: 4px;
+            right: 6px;
+            font-size: 10px;
+            color: #999;
+            font-weight: 500;
+        }
+
+        .concept-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            font-size: 12px;
+            padding: 6px 12px;
+            border-radius: 20px;
+            background: #f0f4f8;
+            color: #3d81b4;
+            font-weight: 500;
+            border: 1px solid #e0e8f0;
+        }
+
+        .tag.accent {
+            background: #fef5f0;
+            color: #14b8a6;
+            border-color: #d4ebe6;
+        }
+
+        .approval-section {
+            margin-top: 80px;
+            padding: 40px;
+            background: white;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+        }
+
+        .approval-section h2 {
+            font-size: 28px;
+            color: #0f2849;
+            margin-bottom: 16px;
+        }
+
+        .approval-section p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 24px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 28px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: #3d81b4;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #2d6299;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(61, 129, 180, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #3d81b4;
+            border: 2px solid #3d81b4;
+        }
+
+        .btn-secondary:hover {
+            background: #f0f4f8;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+
+        .feature {
+            text-align: center;
+        }
+
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 12px;
+        }
+
+        .feature h3 {
+            font-size: 16px;
+            color: #0f2849;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .feature p {
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>CodePay Logo Concepts</h1>
+            <p class="subtitle">5 Professional Design Directions</p>
+        </header>
+
+        <!-- Features -->
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">🎯</div>
+                <h3>Geometric & Bold</h3>
+                <p>Pomelo-inspired clean letterforms with mathematical precision</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🌍</div>
+                <h3>African Positioning</h3>
+                <p>Modern fintech aesthetic that reflects continental infrastructure</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">📱</div>
+                <h3>Multi-Scale Ready</h3>
+                <p>Perfect at 16px favicon through 1024px+ print applications</p>
+            </div>
+        </div>
+
+        <!-- Concepts -->
+        <div class="concepts-grid">
+            <!-- Concept 1: Geometric C -->
+            <div class="concept">
+                <div class="concept-title">
+                    <span class="concept-number">1</span>
+                    Geometric C Mark
+                </div>
+                <p class="concept-description">
+                    Bold, clean geometric "C" in navy. Pure letterform inspired by Pomelo's minimalist approach.
+                </p>
+                <div class="scales-label">Scales</div>
+                <div class="logo-scales">
+                    <div class="logo-scale">
+                        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M 48 16 Q 48 16 42 12 Q 32 6 18 12 Q 9 17 9 32 Q 9 47 18 52 Q 32 58 42 52 Q 48 48 48 48" fill="none" stroke="#3d81b4" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span class="scale-size">16px</span>
+                    </div>
+                    <div class="logo-scale">
+                        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M 48 16 Q 48 16 42 12 Q 32 6 18 12 Q 9 17 9 32 Q 9 47 18 52 Q 32 58 42 52 Q 48 48 48 48" fill="none" stroke="#3d81b4" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span class="scale-size">48px</span>
+                    </div>
+                    <div class="logo-scale">
+                        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M 48 16 Q 48 16 42 12 Q 32 6 18 12 Q 9 17 9 32 Q 9 47 18 52 Q 32 58 42 52 Q 48 48 48 48" fill="none" stroke="#3d81b4" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span class="scale-size">128px</span>
+                    </div>
+                    <div class="logo-scale">
+                        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M 48 16 Q 48 16 42 12 Q 32 6 18 12 Q 9 17 9 32 Q 9 47 18 52 Q 32 58 42 52 Q 48 48 48 48" fill="none" stroke="#3d81b4" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span class="scale-size">256px</span>
+                    </div>
+                </div>
+                <div class="concept-tags">
+                    <span class="tag">Minimal</span>
+                    <span class="tag">Timeless</span>
+                    <span class="tag accent">Professional</span>
+                </div>
+            </div>
+
+            <!-- Concept 2: C with Connectivity -->
+            <div class="concept">
+                <div class="concept-title">
+                    <span class="concept-number">2</span>
+                    Connectivity Mark
+                </div>
+                <p class="concept-description">
+                    Geometric "C" with 3 teal nodes suggesting network, growth, and infrastructure.
+                </p>
+                <div class="scales-label">Scales</div>
+                <div class="logo-scales">
+                    <div class="logo-scale">
+                        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M 48 16 Q 48 16 42 12 Q 32 6 18 12 Q 9 17 9 32 Q 9 47 18 52 Q 32 58 42 52 Q 48 48 48 48" fill="none" stroke="#3d81b4" stroke-width="6" stroke-linecap="round"/>
+                            <circle cx="42" cy="14" r="3.5" fill="#14b8a6"/>
+                            <circle cx="50" cy="32" r="3" fill="#14b8a6" opacity="0.9"/>
+                            <circle cx="42" cy="50" r="2.5" fill="#14b8a6" opacity="0.7"/>
+                        </svg>
+                        <span class="scale-size">16px</span>
+                    </div>
+                    <div class="logo-scale">
+                        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M 48 16 Q 48 16 42 12 Q 32 6 18 12 Q 9 17 9 32 Q 9 47 18 52 Q 32 58 42 52 Q 48 48 48 48" fill="none" stroke="#3d81b4" stroke-width="6" stroke-linecap="round"/>
+                            <circle cx="42" cy="14" r="3.5" fill="#14b8a6"/>
+                            <circle cx="50" cy="32" r="3" fill="#14b8a6" opacity="0.9"/>
+                            <circle cx="42" cy="50" r="2.5" fill="#14b8a6" opacity="0.7"/>
+                        </svg>
+                        <span class="scale-size">48px</span>
+                    </div>
+                    <div class="logo-scale">
+                        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M 48 16 Q 48 16 42 12 Q 32 6 18 12 Q 9 17 9 32 Q 9 47 18 52 Q 32 58 42 52 Q 48 48 48 48" fill="none" stroke="#3d81b4" stroke-width="6" stroke-linecap="round"/>
+                            <circle cx="42" cy="14" r="3.5" fill="#14b8a6"/>
+                            <circle cx="50" cy="32" r="3" fill="#14b8a6" opacity="0.9"/>
+                            <circle cx="42" cy="50" r="2.5" fill="#14b8a6" opacity="0.7"/>
+                        </svg>
+                        <span class="scale-size">128px</span>
+                    </div>
+                    <div class="logo-scale">
+                        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M 48 16 Q 48 16 42 12 Q 32 6 18 12 Q 9 17 9 32 Q 9 47 18 52 Q 32 58 42 52 Q 48 48 48 48" fill="none" stroke="#3d81b4" stroke-width="6" stroke-linecap="round"/>
+                            <circle cx="42" cy="14" r="3.5" fill="#14b8a6"/>
+                            <circle cx="50" cy="32" r="3" fill="#14b8a6" opacity="0.9"/>
+                            <circle cx="42" cy="50" r="2.5" fill="#14b8a6" opacity="0.7"/>
+                        </svg>
+                        <span class="scale-size">256px</span>
+                    </div>
+                </div>
+                <div class="concept-tags">
+                    <span class="tag">Infrastructure</span>
+                    <span class="tag">Growth</span>
+                    <span class="tag accent">Connected</span>
+                </div>
+            </div>
+
+            <!-- Concept 3: Typography Wordmark -->
+            <div class="concept">
+                <div class="concept-title">
+                    <span class="concept-number">3</span>
+                    Typography Wordmark
+                </div>
+                <p class="concept-description">
+                    Pure geometric sans-serif "CodePay" in bold navy. Pomelo-style letterforms, no icon.
+                </p>
+                <div class="scales-label">Scales</div>
+                <div class="logo-scales">
+                    <div class="logo-scale">
+                        <svg viewBox="0 0 200 50" xmlns="http://www.w3.org/2000/svg">
+                            <text x="10" y="36" font-family="system-ui" font-size="28" font-weight="700" fill="#3d81b4" letter-spacing="-0.5">CodePay</text>
+                        </svg>
+                        <span class="scale-size">16px</span>
+                    </div>
+                    <div class="logo-scale">
+                        <svg viewBox="0 0 200 50" xmlns="http://www.w3.org/2000/svg">
+                            <text x="10" y="36" font-family="system-ui" font-size="28" font-weight="700" fill="#3d81b4" letter-spacing="-0.5">CodePay</text>
+                        </svg>
+                        <span class="scale-size">48px</span>
+                    </div>
+                    <div class="logo-scale">
+                        <svg viewBox="0 0 200 50" xmlns="http://www.w3.org/2000/svg">
+                            <text x="10" y="36" font-family="system-ui" font-size="28" font-weight="700" fill="#3d81b4" letter-spacing="-0.5">CodePay</text>
+                        </svg>
+                        <span class="scale-size">128px</span>
+                    </div>
+                    <div class="logo-scale">
+                        <svg viewBox="0 0 200 50" xmlns="http://www.w3.org/2000/svg">
+                            <text x="10" y="36" font-family="system-ui" font-size="28" font-weight="700" fill="#3d81b4" letter-spacing="-0.5">CodePay</text>
+                        </svg>
+                        <span class="scale-size">256px</span>
+                    </div>
+                </div>
+                <div class="concept-tags">
+                    <span class="tag">Simple</span>
+                    <span class="tag">Scalable</span>
+                    <span class="tag accent">Bold</span>
+                </div>
+            </div>
+
+            <!-- Concept 4: African-Inspired C -->
+            <div class="concept">
+                <div class="concept-title">
+                    <span class="concept-number">4</span>
+                    African C Mark
+                </div>
+                <p class="concept-description">
+                    Geometric "C" with subtle African continent hint. Sophisticated, continent-first positioning.
+                </p>
+                <div class="scales-label">Scales</div>
+                <div class="logo-scales">
+                    <div class="logo-scale">
+                        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M 48 16 Q 48 16 42 12 Q 32 6 18 12 Q 9 17 9 32 Q 9 47 18 52 Q 32 58 42 52 Q 48 48 48 48" fill="none" stroke="#3d81b4" stroke-width="6" stroke-linecap="round"/>
+                            <path d="M 28 24 Q 26 28 26 32 Q 26 36 28 40 Q 30 42 33 42 Q 35 40 35 36 Q 35 32 33 30" fill="#14b8a6" opacity="0.4"/>
+                        </svg>
+                        <span class="scale-size">16px</span>
+                    </div>
+                    <div class="logo-scale">
+                        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M 48 16 Q 48 16 42 12 Q 32 6 18 12 Q 9 17 9 32 Q 9 47 18 52 Q 32 58 42 52 Q 48 48 48 48" fill="none" stroke="#3d81b4" stroke-width="6" stroke-linecap="round"/>
+                            <path d="M 28 24 Q 26 28 26 32 Q 26 36 28 40 Q 30 42 33 42 Q 35 40 35 36 Q 35 32 33 30" fill="#14b8a6" opacity="0.4"/>
+                        </svg>
+                        <span class="scale-size">48px</span>
+                    </div>
+                    <div class="logo-scale">
+                        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M 48 16 Q 48 16 42 12 Q 32 6 18 12 Q 9 17 9 32 Q 9 47 18 52 Q 32 58 42 52 Q 48 48 48 48" fill="none" stroke="#3d81b4" stroke-width="6" stroke-linecap="round"/>
+                            <path d="M 28 24 Q 26 28 26 32 Q 26 36 28 40 Q 30 42 33 42 Q 35 40 35 36 Q 35 32 33 30" fill="#14b8a6" opacity="0.4"/>
+                        </svg>
+                        <span class="scale-size">128px</span>
+                    </div>
+                    <div class="logo-scale">
+                        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M 48 16 Q 48 16 42 12 Q 32 6 18 12 Q 9 17 9 32 Q 9 47 18 52 Q 32 58 42 52 Q 48 48 48 48" fill="none" stroke="#3d81b4" stroke-width="6" stroke-linecap="round"/>
+                            <path d="M 28 24 Q 26 28 26 32 Q 26 36 28 40 Q 30 42 33 42 Q 35 40 35 36 Q 35 32 33 30" fill="#14b8a6" opacity="0.4"/>
+                        </svg>
+                        <span class="scale-size">256px</span>
+                    </div>
+                </div>
+                <div class="concept-tags">
+                    <span class="tag">Africa-First</span>
+                    <span class="tag">Subtle</span>
+                    <span class="tag accent">Premium</span>
+                </div>
+            </div>
+
+            <!-- Concept 5: Tech-Forward C -->
+            <div class="concept">
+                <div class="concept-title">
+                    <span class="concept-number">5</span>
+                    Tech-Forward C
+                </div>
+                <p class="concept-description">
+                    Geometric "C" with circuit-inspired lines. Modern, tech-focused, blockchain-ready aesthetic.
+                </p>
+                <div class="scales-label">Scales</div>
+                <div class="logo-scales">
+                    <div class="logo-scale">
+                        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M 48 16 Q 48 16 42 12 Q 32 6 18 12 Q 9 17 9 32 Q 9 47 18 52 Q 32 58 42 52 Q 48 48 48 48" fill="none" stroke="#3d81b4" stroke-width="6" stroke-linecap="round"/>
+                            <line x1="44" y1="16" x2="52" y2="10" stroke="#14b8a6" stroke-width="1.5" opacity="0.4"/>
+                            <line x1="52" y1="10" x2="52" y2="22" stroke="#14b8a6" stroke-width="1.5" opacity="0.4"/>
+                            <line x1="52" y1="42" x2="52" y2="54" stroke="#14b8a6" stroke-width="1.5" opacity="0.4"/>
+                            <line x1="52" y1="54" x2="44" y2="48" stroke="#14b8a6" stroke-width="1.5" opacity="0.4"/>
+                        </svg>
+                        <span class="scale-size">16px</span>
+                    </div>
+                    <div class="logo-scale">
+                        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M 48 16 Q 48 16 42 12 Q 32 6 18 12 Q 9 17 9 32 Q 9 47 18 52 Q 32 58 42 52 Q 48 48 48 48" fill="none" stroke="#3d81b4" stroke-width="6" stroke-linecap="round"/>
+                            <line x1="44" y1="16" x2="52" y2="10" stroke="#14b8a6" stroke-width="1.5" opacity="0.4"/>
+                            <line x1="52" y1="10" x2="52" y2="22" stroke="#14b8a6" stroke-width="1.5" opacity="0.4"/>
+                            <line x1="52" y1="42" x2="52" y2="54" stroke="#14b8a6" stroke-width="1.5" opacity="0.4"/>
+                            <line x1="52" y1="54" x2="44" y2="48" stroke="#14b8a6" stroke-width="1.5" opacity="0.4"/>
+                        </svg>
+                        <span class="scale-size">48px</span>
+                    </div>
+                    <div class="logo-scale">
+                        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M 48 16 Q 48 16 42 12 Q 32 6 18 12 Q 9 17 9 32 Q 9 47 18 52 Q 32 58 42 52 Q 48 48 48 48" fill="none" stroke="#3d81b4" stroke-width="6" stroke-linecap="round"/>
+                            <line x1="44" y1="16" x2="52" y2="10" stroke="#14b8a6" stroke-width="1.5" opacity="0.4"/>
+                            <line x1="52" y1="10" x2="52" y2="22" stroke="#14b8a6" stroke-width="1.5" opacity="0.4"/>
+                            <line x1="52" y1="42" x2="52" y2="54" stroke="#14b8a6" stroke-width="1.5" opacity="0.4"/>
+                            <line x1="52" y1="54" x2="44" y2="48" stroke="#14b8a6" stroke-width="1.5" opacity="0.4"/>
+                        </svg>
+                        <span class="scale-size">128px</span>
+                    </div>
+                    <div class="logo-scale">
+                        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M 48 16 Q 48 16 42 12 Q 32 6 18 12 Q 9 17 9 32 Q 9 47 18 52 Q 32 58 42 52 Q 48 48 48 48" fill="none" stroke="#3d81b4" stroke-width="6" stroke-linecap="round"/>
+                            <line x1="44" y1="16" x2="52" y2="10" stroke="#14b8a6" stroke-width="1.5" opacity="0.4"/>
+                            <line x1="52" y1="10" x2="52" y2="22" stroke="#14b8a6" stroke-width="1.5" opacity="0.4"/>
+                            <line x1="52" y1="42" x2="52" y2="54" stroke="#14b8a6" stroke-width="1.5" opacity="0.4"/>
+                            <line x1="52" y1="54" x2="44" y2="48" stroke="#14b8a6" stroke-width="1.5" opacity="0.4"/>
+                        </svg>
+                        <span class="scale-size">256px</span>
+                    </div>
+                </div>
+                <div class="concept-tags">
+                    <span class="tag">Tech-Focused</span>
+                    <span class="tag">Modern</span>
+                    <span class="tag accent">Future-Ready</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Approval Section -->
+        <div class="approval-section">
+            <h2>Ready to Move Forward?</h2>
+            <p>
+                Select your preferred concept above. We can refine, combine, or iterate on any direction.
+                Each logo is production-ready and scales perfectly from favicon to billboard.
+            </p>
+            <div class="cta-buttons">
+                <button class="btn btn-primary" onclick="alert('Concept selected! Message the team to proceed.')">
+                    ✓ Select Favorite Concept
+                </button>
+                <button class="btn btn-secondary" onclick="alert('Let\'s refine further!')">
+                    ⚙ Request Refinement
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

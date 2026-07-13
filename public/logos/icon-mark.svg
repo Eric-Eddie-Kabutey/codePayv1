@@ -1,0 +1,23 @@
+<svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg" width="256" height="256">
+  <!-- Background (optional, remove for transparent) -->
+  <rect width="256" height="256" fill="white"/>
+
+  <!-- Main circle (navy blue) -->
+  <circle cx="128" cy="128" r="90" fill="#3d81b4"/>
+
+  <!-- Inner cutout (creates C shape) -->
+  <circle cx="128" cy="128" r="55" fill="white"/>
+
+  <!-- Top accent node (teal) -->
+  <circle cx="128" cy="37" r="14" fill="#14b8a6"/>
+
+  <!-- Right accent node (teal) -->
+  <circle cx="211" cy="128" r="12" fill="#14b8a6"/>
+
+  <!-- Bottom accent node (teal, slightly transparent) -->
+  <circle cx="128" cy="219" r="10" fill="#14b8a6" opacity="0.8"/>
+
+  <!-- Subtle connecting lines -->
+  <line x1="135" y1="47" x2="205" y2="115" stroke="#14b8a6" stroke-width="2" opacity="0.25" stroke-linecap="round"/>
+  <line x1="205" y1="140" x2="140" y2="210" stroke="#14b8a6" stroke-width="2" opacity="0.2" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,27 @@
+<svg viewBox="0 0 700 140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+  <title>CodePay - Extended Typography Wordmark</title>
+
+  <!-- Main Wordmark - Larger -->
+  <text
+    x="40"
+    y="105"
+    font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+    font-size="100"
+    font-weight="700"
+    fill="#3d81b4"
+    letter-spacing="-2.5"
+    text-anchor="start"
+  >CodePay</text>
+
+  <!-- Tagline/Subtext -->
+  <text
+    x="40"
+    y="130"
+    font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+    font-size="14"
+    font-weight="500"
+    fill="#14b8a6"
+    letter-spacing="0.5"
+    text-anchor="start"
+  >Africa's Fintech Infrastructure</text>
+</svg>
