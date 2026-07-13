@@ -1,55 +1,156 @@
-"use client"
-import { Differentiator } from '@/content/homepage';
-import React, { useState } from 'react'
+"use client";
+import React, { useState } from "react";
 
+const cards = [
+  {
+    id: "connect",
+    title: (
+      <>
+        Connect &<br /> Communicate
+      </>
+    ),
+    description:
+      "Send SMS, Voice & IVR instantly, reach your audience on any device, any network.",
+    gradient: "bg-gradient-to-b from-[#319e5c] to-[#a2d8ba]",
+    image: "/assets/images/card-1.webp",
+  },
+  {
+    id: "ussd",
+    title: (
+      <>
+        Interactive<br /> USSD
+      </>
+    ),
+    description:
+      "Build mobile menus and real-time services that work on all phones, no app needed.",
+    gradient: "bg-gradient-to-b from-[#3bc0f8] to-[#87ddfd]",
+    image: "/assets/images/card-2.webp",
+  },
+  {
+    id: "payments",
+    title: (
+      <>
+        Accept<br /> Payments
+      </>
+    ),
+    description:
+      "Collect mobile money and card payments securely, with real-time tracking.",
+    gradient: "bg-gradient-to-b from-[#c93431] to-[#e0a39e]",
+    image: "/assets/images/card-3.webp",
+  },
+  {
+    id: "payouts",
+    title: (
+      <>
+        Bulk Payouts
+      </>
+    ),
+    description:
+      "Disburse funds to many recipients quickly and easily for payroll or payouts.",
+    gradient: "bg-gradient-to-b from-[#5468ff] to-[#b1c6ff]",
+    image: "/assets/images/card-4.webp",
+  },
+  // 4 New Added Cards below
+  {
+    id: "identity",
+    title: (
+      <>
+        Identity<br /> Verification
+      </>
+    ),
+    description:
+      "Verify user identities quickly and securely with integrated KYC and ID checks.",
+    gradient: "bg-gradient-to-b from-[#f59e0b] to-[#fde68a]", // Amber gradient
+    image: "/assets/images/card-1.webp",
+  },
+  {
+    id: "ticketing",
+    title: (
+      <>
+        Event<br /> Ticketing
+      </>
+    ),
+    description:
+      "Create, sell, and manage tickets for your events with automated QR code scanning.",
+    gradient: "bg-gradient-to-b from-[#8b5cf6] to-[#c4b5fd]", // Violet gradient
+    image: "/assets/card-2.webp",
+  },
+  {
+    id: "loyalty",
+    title: (
+      <>
+        Customer<br /> Loyalty
+      </>
+    ),
+    description:
+      "Reward your best customers and keep them coming back with custom loyalty programs.",
+    gradient: "bg-gradient-to-b from-[#ec4899] to-[#fbcfe8]", // Pink gradient
+    image: "/assets/images/card-3.webp",
+  },
+  {
+    id: "analytics",
+    title: (
+      <>
+        Advanced<br /> Analytics
+      </>
+    ),
+    description:
+      "Get deep insights into your messaging, payments, and audience engagement.",
+    gradient: "bg-gradient-to-b from-[#14b8a6] to-[#99f6e4]", // Teal gradient
+    image: "/assets/images/card-4.webp",
+  },
+];
 
 function OnePlatform() {
-  const [activeId, setActiveId] = useState(Differentiator.items[0].id);
-  const active = Differentiator.items.find((p) => p.id === activeId) || Differentiator.items[0];
+  const [ showAll, setShowAll ] = useState(false);
+
+  // Slice the array to show 4 or all 8 based on state
+  const displayedCards = showAll ? cards : cards.slice(0, 4);
 
   return (
-    <section className="py-12 sm:py-16 max-w-7xl mx-auto">
-        <div className="rounded-xl p-4 sm:p-6 lg:p-8 bg-neutral-50">
-          <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
-            <div className="lg:w-1/2 space-y-6 sm:space-y-8">
-              {Differentiator.items.map((tab) => (
-                <div
-                  key={tab.id}
-                  onClick={() => setActiveId(tab.id)}
-                  className={`relative flex flex-col gap-6 pl-6 sm:pl-8 cursor-pointer transition-opacity ${activeId === tab.id ? 'opacity-100' : 'opacity-50 hover:opacity-70'}`}
-                >
-                  {activeId === tab.id && (
-                    <div className="absolute left-0 top-0 h-full w-1 bg-theme-green-900 rounded-full"></div>
-                  )}
-                  <h2 className="text-xl sm:text-2xl lg:text-3xl font-normal mb-3 sm:mb-4">{tab.title}</h2>
-                  {activeId === tab.id && (
-                    <p className="text-base sm:text-lg lg:text-xl text-gray-700">{tab.tagline}</p>
-                  )}
-                  {activeId === tab.id && (
-                    <div className="lg:w-1/2 pt-6 flex sm:hidden items-center justify-center bg-neutral-100 rounded-xl p-4 sm:p-8 border border-neutral-200">
-                      <img
-                        src={active.imageUrl}
-                        alt={active.imageAlt}
-                        className="w-full h-auto max-h-[250px] sm:max-h-[400px] object-contain"
-                        loading="lazy"
-                      />
-                    </div>
-                  )}
-                </div>
-              ))}
+    <section className="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6">
+
+      {/* Top Header Section with the "See All" Button */}
+      <div className="flex items-center justify-end mb-6 lg:mb-8">
+        <button
+          onClick={() => setShowAll(!showAll)}
+          className="inline-flex items-center justify-center rounded-full border border-gray-300 bg-white px-6 py-2 text-sm font-semibold text-gray-800 shadow-sm transition-colors hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-200"
+        >
+          {showAll ? "Show Less" : "See All"}
+        </button>
+      </div>
+
+      {/* Cards Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 transition-all duration-500">
+        {displayedCards.map((card) => (
+          <div
+            key={card.id}
+            className={`relative flex flex-col overflow-hidden rounded-2xl h-[400px] sm:h-[420px] lg:h-[420px] pt-8 px-6 shadow-sm ${card.gradient}`}
+          >
+            {/* Text Content */}
+            <div className="z-10 relative">
+              <h2 className="text-white text-3xl font-bold mb-4 leading-tight tracking-tight">
+                {card.title}
+              </h2>
+              <p className="text-white/95 text-[15px] sm:text-base leading-snug pr-2">
+                {card.description}
+              </p>
             </div>
-            <div className="lg:w-1/2 hidden sm:flex items-center justify-center bg-neutral-100 rounded-xl p-4 sm:p-8">
+
+            {/* Bottom Image (Cutouts) */}
+            <div className="absolute bottom-0 left-0 w-full h-[55%] flex items-end justify-center pointer-events-none">
               <img
-                src={active.imageUrl}
-                alt={active.imageAlt}
-                className="w-full h-auto max-h-[300px] sm:max-h-[400px] object-contain"
+                src={card.image}
+                alt={card.id}
+                className="w-full h-full object-contain object-bottom"
                 loading="lazy"
               />
             </div>
           </div>
-        </div>
-      </section>
-  )
+        ))}
+      </div>
+    </section>
+  );
 }
 
-export default OnePlatform
+export default OnePlatform;
