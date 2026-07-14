@@ -70,7 +70,7 @@ function Navbar() {
               {item.dropdownColumns ? (
                 <>
                   <button
-                    className={`flex items-center gap-1 px-4 text-sm xl:text-base font-medium transition-colors rounded-none h-full ${openDropdown === item.id
+                    className={`flex items-center gap-1 px-4 text-sm xl:text-base font-medium transition-colors rounded-xl-none h-full ${openDropdown === item.id
                         ? 'bg-neutral-100 text-black'
                         : 'text-neutral-600 hover:text-black hover:bg-neutral-50'
                       }`}
@@ -87,7 +87,7 @@ function Navbar() {
                   {openDropdown === item.id && (
                     <div className="absolute left-0 top-full w-full pt-0 z-50">
                       {/* FIX: Added max-h-[calc(100vh-5rem)] and overflow-y-auto to allow scrolling on small laptop screens */}
-                      <div className="bg-white shadow-xl border border-neutral-100 border-t-0 flex p-8 rounded-b-xl max-h-[calc(100vh-5rem)] overflow-y-auto">
+                      <div className="bg-white shadow-xl border border-neutral-100 border-t-0 flex p-8 rounded-xl-b-xl max-h-[calc(100vh-5rem)] overflow-y-auto">
                         {item.dropdownColumns.map((col, colIndex) => (
                           <div
                             key={colIndex}
@@ -132,7 +132,7 @@ function Navbar() {
               ) : (
                 <Link
                   href={item.href}
-                  className="flex items-center px-4 text-sm xl:text-base text-neutral-600 hover:text-black font-medium transition-colors rounded-none hover:bg-neutral-50 h-full"
+                  className="flex items-center px-4 text-sm xl:text-base text-neutral-600 hover:text-black font-medium transition-colors rounded-xl-none hover:bg-neutral-50 h-full"
                 >
                   {item.label}
                 </Link>
@@ -188,7 +188,7 @@ function Navbar() {
                       </svg>
                     </button>
                     {mobileOpen === item.id && (
-                      <div className="bg-neutral-50 rounded-lg px-4 py-3 mb-2 space-y-4">
+                      <div className="bg-neutral-50 rounded-xl-lg px-4 py-3 mb-2 space-y-4">
                         {item.dropdownColumns.flatMap(col => col.items).map((sub) => (
                           <Link
                             key={sub.href}
@@ -216,14 +216,14 @@ function Navbar() {
             <div className="py-5 space-y-4 flex flex-col items-center">
               <Link
                 href={navigation.secondaryCTA.href}
-                className="text-base font-medium text-black hover:text-gray-600"
+                className="text-base font-medium border border-white/25 bg-theme-blue-900 text-black hover:text-gray-600"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {navigation.secondaryCTA.label}
               </Link>
               <Link
                 href={navigation.primaryCTA.href}
-                className="block w-full text-center border border-gray-300 bg-white px-5 py-3 text-sm font-semibold text-black transition-all hover:border-gray-800"
+                className="block w-full text-center rounded-xl border border-white/25 bg-theme-green-900 py-2 px-6 text-base font-medium text-black backdrop-blur-md transition-all duration-300 hover:border-transparent hover:bg-theme-purple-900 hover:text-[#071B2D] sm:min-w-[240px]"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {navigation.primaryCTA.label}

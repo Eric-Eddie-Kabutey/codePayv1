@@ -98,7 +98,7 @@ export const Differentiator = {
   ],
 };
 
-export const adminLayers = {
+export const adminLayers_old = {
   headline: 'Built for Every Layer of Your Operation',
   body: "CodePay isn't just for end users. It's a complete operational ecosystem with five distinct administrative layers, each designed to give the right people the right level of control.",
   layers: [
@@ -142,6 +142,68 @@ export const adminLayers = {
       text: "#000000",
       imageUrl: '/assets/images/FROG-MOC-1.webp',
     },
+  ],
+};
+
+export const adminLayers = {
+  headline: 'Built for Every Layer of Your Operation',
+  body: "CodePay isn't just for end users. It's a complete operational ecosystem with five distinct administrative layers, each designed to give the right people the right level of control.",
+  rows: [
+    {
+      id: 'row-1',
+      largeBox: {
+        title: 'Super Admin',
+        body: 'The custodian. The owner. Full platform control, global oversight, and the power to invite and manage every other layer.',
+        bg: "#218350",
+        text: "#ffffff",
+        buttonLabel: "Learn More About CodePay",
+        imageUrl: '/assets/images/FROG-MOC-1.webp',
+      },
+      smallBoxes: [
+        {
+          title: 'Country Admins',
+          body: 'Invite country heads to manage operations in specific markets. They handle local compliance, agent oversight, and regional performance.',
+          bg: "#F58120",
+          text: "#ffffff",
+          imageUrl: '/assets/images/FROG-MOC-1.webp', // Swap with a phone image
+        },
+        {
+          title: 'Master Agents',
+          body: 'Main organizations that onboard sub-agents and manage payout/deposit operations across their branch networks.',
+          bg: "#C0EAD1",
+          text: "#000000",
+          imageUrl: '/assets/images/developer.svg', // Swap with a person/character image
+        }
+      ]
+    },
+    {
+      id: 'row-2',
+      largeBox: {
+        title: 'Sub-Agents',
+        body: 'Individual branches or agents managed by master agents, handling day-to-day customer deposits, withdrawals, and support at the local level.',
+        bg: "#218350",
+        text: "#ffffff",
+        buttonLabel: "Manage Agents",
+        imageUrl: '/assets/images/FROG-MOC-1.webp',
+      },
+      smallBoxes: [
+        {
+          title: 'Users & Businesses',
+          body: 'End users who send, receive, save, and pay. Plus businesses using the platform for merchant payments, payroll, and financial management.',
+          bg: "#F58120",
+          text: "#ffffff",
+          imageUrl: '/assets/images/FROG-MOC-1.webp',
+        },
+        {
+          title: 'Ready to take control?',
+          body: 'Join our unified platform and start building your custom operational ecosystem today.',
+          bg: "#ffffff",
+          text: "#000000",
+          imageUrl: '/assets/images/frog-get-started.webp',
+          isCTA: true // Triggers the CTA button rendering
+        }
+      ]
+    }
   ],
 };
 

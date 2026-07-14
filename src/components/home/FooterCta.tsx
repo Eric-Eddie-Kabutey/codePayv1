@@ -31,7 +31,7 @@ function FooterCTA() {
         <div className="mt-8 flex justify-center gap-4 sm:gap-6 flex-wrap">         
           <Link
             href={finalCTA.primaryCTA.href}
-            className="group/link inline-flex items-center justify-between gap-6 bg-[#1a1a1a] text-white px-8 py-3.5 text-xs sm:text-sm font-bold uppercase tracking-widest hover:bg-black transition-colors"
+            className="group/link inline-flex items-center justify-between gap-6 bg-[#1a1a1a] text-white px-8 py-3.5 text-xs sm:text-sm font-bold uppercase tracking-widest hover:bg-black transition-colors rounded-xl"
           >            
             <span>{finalCTA.primaryCTA.label}</span>
             
@@ -52,7 +52,7 @@ function FooterCTA() {
 
           <Link
             href={finalCTA.secondaryCTA.href}
-            className="group/link inline-flex items-center justify-between gap-6 bg-[#1a1a1a] text-white px-8 py-3.5 text-xs sm:text-sm font-bold uppercase tracking-widest hover:bg-black transition-colors"
+            className="group/link inline-flex items-center justify-between gap-6 bg-[#1a1a1a] text-white px-8 py-3.5 text-xs sm:text-sm font-bold uppercase tracking-widest hover:bg-black transition-colors rounded-xl"
           >            
             <span>{finalCTA.secondaryCTA.label}</span>
 

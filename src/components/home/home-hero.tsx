@@ -23,7 +23,7 @@ function HomeHero() {
           <div className="flex flex-col sm:flex-row justify-center gap-3 pt-4">
             <Link
               href={hero.primaryCTA.href}
-              className="group/link inline-flex items-center justify-between gap-6 rounded-full border border-white/25 bg-theme-blue-900 py-2 px-6 text-base font-medium text-black backdrop-blur-md transition-all duration-300 hover:border-transparent hover:bg-theme-purple-900 hover:text-[#071B2D] sm:min-w-[240px]"
+              className="group/link inline-flex items-center justify-between gap-6 rounded-xl border border-white/25 bg-theme-blue-900 py-2 px-6 text-base font-medium text-black backdrop-blur-md transition-all duration-300 hover:border-transparent hover:bg-theme-purple-900 hover:text-[#071B2D] sm:min-w-[240px]"
             >
               <span>{hero.primaryCTA.label}</span>
 
@@ -44,7 +44,7 @@ function HomeHero() {
 
             <Link
               href={hero.secondaryCTA.href}
-              className="group/link inline-flex items-center justify-between gap-6 rounded-full border border-white/25 bg-theme-green-900 py-2 px-6 text-base font-medium text-black backdrop-blur-md transition-all duration-300 hover:border-transparent hover:bg-theme-purple-900 hover:text-[#071B2D] sm:min-w-[240px]"
+              className="group/link inline-flex items-center justify-between gap-6 rounded-xl border border-white/25 bg-theme-green-900 py-2 px-6 text-base font-medium text-black backdrop-blur-md transition-all duration-300 hover:border-transparent hover:bg-theme-purple-900 hover:text-[#071B2D] sm:min-w-[240px]"
             >
               <span>{hero.secondaryCTA.label}</span>
 
@@ -67,25 +67,25 @@ function HomeHero() {
 
         {/* Feature Navigation Links from the Image UI */}
         <div className="hidden w-full mt-24 mb-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-left z-10">
-          <div className="bg-white/20 rounded-2xl p-6 shadow-sm transition-colors cursor-default">
+          <div className="bg-white/20 rounded-xl-2xl p-6 shadow-sm transition-colors cursor-default">
             <h3 className="font-bold text-lg mb-1.5 text-white">FROG Messaging</h3>
             <p className="text-sm text-white/80 leading-snug">
               Powerful SMS, USSD, Voice & IVR Messaging
             </p>
           </div>
-          <div className="rounded-2xl p-6 hover:bg-white/10 transition-colors cursor-pointer">
+          <div className="rounded-xl-2xl p-6 hover:bg-white/10 transition-colors cursor-pointer">
             <h3 className="font-bold text-lg mb-1.5 text-white">Redde Payments</h3>
             <p className="text-sm text-white/80 leading-snug">
               Secure Online Payments & Collections
             </p>
           </div>
-          <div className="rounded-2xl p-6 hover:bg-white/10 transition-colors cursor-pointer">
+          <div className="rounded-xl-2xl p-6 hover:bg-white/10 transition-colors cursor-pointer">
             <h3 className="font-bold text-lg mb-1.5 text-white">School Management<br className="hidden lg:block" /> Platform</h3>
             <p className="text-sm text-white/80 leading-snug">
               Efficient School Management System
             </p>
           </div>
-          <div className="rounded-2xl p-6 hover:bg-white/10 transition-colors cursor-pointer">
+          <div className="rounded-xl-2xl p-6 hover:bg-white/10 transition-colors cursor-pointer">
             <h3 className="font-bold text-lg mb-1.5 text-white">GH Topups</h3>
             <p className="text-sm text-white/80 leading-snug">
               Buy WASSCE, BECE AND NOVDEC Vouchers
@@ -94,7 +94,7 @@ function HomeHero() {
         </div>
 
         {/* Replaced standard Image with the Video element */}
-        <div className="w-full  mx-auto mt-16 rounded-t-2xl overflow-hidden shadow-2xl translate-y-4 lg:translate-y-8 border-t border-x border-white/20">
+        <div className="w-full  mx-auto mt-16 rounded-xl-t-2xl overflow-hidden shadow-2xl translate-y-4 lg:translate-y-8 border-t border-x border-white/20">
           <video
             autoPlay
             loop

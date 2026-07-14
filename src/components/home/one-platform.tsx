@@ -174,7 +174,7 @@ function OnePlatform() {
       <div className="flex items-center justify-end mb-6 lg:mb-8">
         <button
           onClick={() => setShowAll(!showAll)}
-          className="inline-flex items-center justify-center rounded-full border border-gray-300 bg-white px-6 py-2 text-sm font-semibold text-gray-800 shadow-sm transition-colors hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-200"
+          className="inline-flex items-center justify-center rounded-xl border border-gray-300 bg-white px-6 py-2 text-sm font-semibold text-gray-800 shadow-sm transition-colors hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-200"
         >
           {showAll ? "Show Less" : "See All"}
         </button>
