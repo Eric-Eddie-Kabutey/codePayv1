@@ -6,11 +6,11 @@ const cards = [
     id: "connect",
     title: (
       <>
-        Connect &<br /> Communicate
+        Multi Currency
       </>
     ),
     description:
-      "Send SMS, Voice & IVR instantly, reach your audience on any device, any network.",
+      "Hold, spend, and switch between currencies natively. No manual conversion. No hidden markup. Just one wallet, many currencies.",
     gradient: "bg-gradient-to-b from-[#319e5c] to-[#a2d8ba]",
     image: "/assets/images/card-1.webp",
   },
@@ -18,11 +18,11 @@ const cards = [
     id: "ussd",
     title: (
       <>
-        Interactive<br /> USSD
+        Virtual Cards
       </>
     ),
     description:
-      "Build mobile menus and real-time services that work on all phones, no app needed.",
+      "Generate a card in seconds. Freeze it, top it up, or kill it just as fast. Built for online spending, not paper forms.",
     gradient: "bg-gradient-to-b from-[#3bc0f8] to-[#87ddfd]",
     image: "/assets/images/card-2.webp",
   },
@@ -30,11 +30,11 @@ const cards = [
     id: "payments",
     title: (
       <>
-        Accept<br /> Payments
+        Send and Receive
       </>
     ),
     description:
-      "Collect mobile money and card payments securely, with real-time tracking.",
+      "Move money instantly, across accounts, banks, or borders. No queues. No waiting on 'processing.' Just sent, and received.",
     gradient: "bg-gradient-to-b from-[#c93431] to-[#e0a39e]",
     image: "/assets/images/card-3.webp",
   },
@@ -42,11 +42,11 @@ const cards = [
     id: "payouts",
     title: (
       <>
-        Bulk Payouts
+        Buy Utilities
       </>
     ),
     description:
-      "Disburse funds to many recipients quickly and easily for payroll or payouts.",
+      "Pay electricity, water, and bills in one tap. No receipts to keep. No lines to stand in.",
     gradient: "bg-gradient-to-b from-[#5468ff] to-[#b1c6ff]",
     image: "/assets/images/card-4.webp",
   },
@@ -55,11 +55,11 @@ const cards = [
     id: "identity",
     title: (
       <>
-        Identity<br /> Verification
+        Mobile Credit
       </>
     ),
     description:
-      "Verify user identities quickly and securely with integrated KYC and ID checks.",
+      "Top up airtime or data instantly, for yourself or anyone else. Any network. Any time.",
     gradient: "bg-gradient-to-b from-[#f59e0b] to-[#fde68a]", // Amber gradient
     image: "/assets/images/card-1.webp",
   },
@@ -67,11 +67,11 @@ const cards = [
     id: "ticketing",
     title: (
       <>
-        Event<br /> Ticketing
+        Group Osusu
       </>
     ),
     description:
-      "Create, sell, and manage tickets for your events with automated QR code scanning.",
+      "Digitize the trust circle you already run. Automated contributions, transparent payouts, zero spreadsheets.",
     gradient: "bg-gradient-to-b from-[#8b5cf6] to-[#c4b5fd]", // Violet gradient
     image: "/assets/card-2.webp",
   },
@@ -79,11 +79,11 @@ const cards = [
     id: "loyalty",
     title: (
       <>
-        Customer<br /> Loyalty
+        USSD (Offline Transfers)
       </>
     ),
     description:
-      "Reward your best customers and keep them coming back with custom loyalty programs.",
+      "No internet? No problem. Send money, check balances, and pay bills straight from any phone, smart or not.",
     gradient: "bg-gradient-to-b from-[#ec4899] to-[#fbcfe8]", // Pink gradient
     image: "/assets/images/card-3.webp",
   },
@@ -91,11 +91,71 @@ const cards = [
     id: "analytics",
     title: (
       <>
-        Advanced<br /> Analytics
+        WhatsApp Banking
       </>
     ),
     description:
-      "Get deep insights into your messaging, payments, and audience engagement.",
+      "Bank from the chat you already have open. Check balances, send money, pay bills, all inside WhatsApp.",
+    gradient: "bg-gradient-to-b from-[#14b8a6] to-[#99f6e4]", // Teal gradient
+    image: "/assets/images/card-4.webp",
+  },  
+  {
+    id: "analytics",
+    title: (
+      <>
+        Buy Tickets
+      </>
+    ),
+    description:
+      "Book travel, events, or transport tickets without leaving the app. No third-party redirects. No lost confirmations.",
+    gradient: "bg-gradient-to-b from-[#14b8a6] to-[#99f6e4]", // Teal gradient
+    image: "/assets/images/card-4.webp",
+  },
+  {
+    id: "analytics",
+    title: (
+      <>
+        Loan & Salary Advance
+      </>
+    ),
+    description:
+      "Access funds before payday, based on real transaction history, not paperwork. Approved in minutes, not weeks.",
+    gradient: "bg-gradient-to-b from-[#14b8a6] to-[#99f6e4]", // Teal gradient
+    image: "/assets/images/card-4.webp",
+  },
+  {
+    id: "analytics",
+    title: (
+      <>
+        AI Powered Support
+      </>
+    ),
+    description:
+      "Get answers instantly, day or night. No hold music. No ticket numbers. Just a resolution.",
+    gradient: "bg-gradient-to-b from-[#14b8a6] to-[#99f6e4]", // Teal gradient
+    image: "/assets/images/card-4.webp",
+  },
+  {
+    id: "analytics",
+    title: (
+      <>
+        Automated KYC 
+      </>
+    ),
+    description:
+      "Verify identity in minutes, not days. Scan, confirm, done. No branch visit required.",
+    gradient: "bg-gradient-to-b from-[#14b8a6] to-[#99f6e4]", // Teal gradient
+    image: "/assets/images/card-4.webp",
+  },
+  {
+    id: "analytics",
+    title: (
+      <>
+        Agent Locator
+      </>
+    ),
+    description:
+      "Find the nearest cash-in, cash-out point on a live map. No guessing. No wasted trips.",
     gradient: "bg-gradient-to-b from-[#14b8a6] to-[#99f6e4]", // Teal gradient
     image: "/assets/images/card-4.webp",
   },
