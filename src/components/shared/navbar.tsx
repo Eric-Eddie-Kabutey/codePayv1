@@ -7,12 +7,19 @@ import { ArrowUpRight } from "lucide-react";
 import { navigation } from '@/content/navigation';
 
 function Navbar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
-  const [mobileOpen, setMobileOpen] = useState<string | null>(null);
+  const [ isMenuOpen, setIsMenuOpen ] = useState(false);
+  const [ openDropdown, setOpenDropdown ] = useState<string | null>(null);
+  const [ mobileOpen, setMobileOpen ] = useState<string | null>(null);
+
+  // Scroll behavior states
+  const [ isVisible, setIsVisible ] = useState(true);
+  const [ lastScrollY, setLastScrollY ] = useState(0);
+  const [ isScrolled, setIsScrolled ] = useState(false);
+
   const router = useRouter();
   const navRef = useRef<HTMLDivElement>(null);
 
+  // Handle clicking outside to close dropdowns
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
       if (navRef.current && !navRef.current.contains(e.target as Node)) {
@@ -23,9 +30,37 @@ function Navbar() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
+  // Handle Scroll (Hide on scroll down, show on scroll up)
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      // Add a solid background if scrolled past the top (improves readability)
+      setIsScrolled(currentScrollY > 20);
+
+      if (currentScrollY > lastScrollY && currentScrollY > 80) {
+        // Scrolling down & past the initial header area
+        setIsVisible(false);
+        setOpenDropdown(null); // Close any open mega-menus for better UX
+      } else {
+        // Scrolling up
+        setIsVisible(true);
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [ lastScrollY ]);
+
   return (
-    <div className="w-full px-4 sm:px-6 py-4 bg-transparent z-50 relative" ref={navRef}>
-      <nav className="max-w-7xl mx-auto">
+    <div
+      ref={navRef}
+      className={`fixed top-0 left-0 w-full px-4 sm:px-6 py-4 z-50 transition-all duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'
+        } ${isScrolled ? 'bg-white shadow-sm' : 'bg-transparent'}`}
+    >
+      <nav className="max-w-7xl mx-auto relative">
         <div className="flex justify-between items-center">
 
           {/* Logo */}
@@ -36,18 +71,62 @@ function Navbar() {
           {/* Desktop Nav */}
           <div className="hidden lg:flex items-center gap-1 xl:gap-2">
             {navigation.links.map((item) => (
-              <div key={item.id} className="relative">
-                {item.dropdown ? (
-                  <button
-                    className="flex items-center gap-1 px-3 py-2 text-sm xl:text-base text-neutral-700 hover:text-navy-900 transition-colors rounded-md hover:bg-neutral-50"
-                    onMouseEnter={() => setOpenDropdown(item.id)}
-                    onClick={() => setOpenDropdown(openDropdown === item.id ? null : item.id)}
-                  >
-                    {item.label}
-                    <svg className={`w-3.5 h-3.5 transition-transform ${openDropdown === item.id ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </button>
+              <div
+                key={item.id}
+                onMouseLeave={() => setOpenDropdown(null)}
+              >
+                {item.dropdownColumns ? (
+                  <>
+                    <button
+                      className={`flex items-center gap-1 px-3 py-2 text-sm xl:text-base transition-colors rounded-md ${openDropdown === item.id
+                          ? 'bg-neutral-100 text-navy-900'
+                          : 'text-neutral-700 hover:text-navy-900 hover:bg-neutral-50'
+                        }`}
+                      onMouseEnter={() => setOpenDropdown(item.id)}
+                      onClick={() => setOpenDropdown(openDropdown === item.id ? null : item.id)}
+                    >
+                      {item.label}
+                      <svg className={`w-3.5 h-3.5 transition-transform ${openDropdown === item.id ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+
+                    {/* Mega Menu Full Width Dropdown */}
+                    {openDropdown === item.id && (
+                      // Reduced padding here (pt-2 instead of pt-6) closes the gap so the menu doesn't vanish
+                      <div className="absolute left-0 top-full w-full pt-2 z-50">
+                        <div className="bg-white rounded-2xl shadow-xl border border-neutral-100 flex p-8">
+                          {item.dropdownColumns.map((col, colIndex) => (
+                            <div
+                              key={colIndex}
+                              className={`flex-1 flex flex-col gap-8 px-6 ${colIndex !== item.dropdownColumns.length - 1
+                                  ? 'border-r-2 border-dotted border-gray-200'
+                                  : ''
+                                }`}
+                            >
+                              {col.map((sub) => (
+                                <Link
+                                  key={sub.href}
+                                  href={sub.href}
+                                  className="group block"
+                                  onClick={() => setOpenDropdown(null)}
+                                >
+                                  <div className="text-base font-medium text-navy-900 group-hover:text-theme-green-900 transition-colors">
+                                    {sub.label}
+                                  </div>
+                                  {sub.description && (
+                                    <div className="text-sm text-neutral-500 mt-1.5 leading-relaxed">
+                                      {sub.description}
+                                    </div>
+                                  )}
+                                </Link>
+                              ))}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </>
                 ) : (
                   <Link
                     href={item.href}
@@ -55,28 +134,6 @@ function Navbar() {
                   >
                     {item.label}
                   </Link>
-                )}
-
-                {/* Dropdown */}
-                {openDropdown === item.id && item.dropdown && (
-                  <div
-                    className="absolute left-0 top-full mt-1 w-72 bg-white rounded-xl shadow-lg border border-neutral-100 py-2 z-50"
-                    onMouseLeave={() => setOpenDropdown(null)}
-                  >
-                    {item.dropdown.map((sub) => (
-                      <Link
-                        key={sub.href}
-                        href={sub.href}
-                        className="block px-4 py-3 hover:bg-neutral-50 transition-colors"
-                        onClick={() => setOpenDropdown(null)}
-                      >
-                        <div className="text-sm font-medium text-navy-900">{sub.label}</div>
-                        {sub.description && (
-                          <div className="text-xs text-neutral-500 mt-0.5 leading-snug">{sub.description}</div>
-                        )}
-                      </Link>
-                    ))}
-                  </div>
                 )}
               </div>
             ))}
@@ -95,7 +152,6 @@ function Navbar() {
               className="group/link inline-flex items-center justify-between gap-6 rounded-full border border-white/25 bg-theme-green-900 py-2 px-6 text-base font-medium text-black backdrop-blur-md transition-all duration-300 hover:border-transparent hover:bg-theme-purple-900 hover:text-[#071B2D]"
             >
               {navigation.primaryCTA.label}
-              
             </Link>
           </div>
 
@@ -119,7 +175,7 @@ function Navbar() {
           <div className="bg-white rounded-xl border border-neutral-100 shadow-lg divide-y divide-neutral-50">
             {navigation.links.map((item) => (
               <div key={item.id}>
-                {item.dropdown ? (
+                {item.dropdownColumns ? (
                   <>
                     <button
                       className="flex items-center justify-between w-full px-5 py-4 text-base font-medium text-neutral-700 hover:text-navy-900"
@@ -132,7 +188,7 @@ function Navbar() {
                     </button>
                     {mobileOpen === item.id && (
                       <div className="bg-neutral-50 px-5 pb-3 space-y-1">
-                        {item.dropdown.map((sub) => (
+                        {item.dropdownColumns.flat().map((sub) => (
                           <Link
                             key={sub.href}
                             href={sub.href}
