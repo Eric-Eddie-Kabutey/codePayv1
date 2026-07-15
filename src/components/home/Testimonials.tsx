@@ -2,50 +2,29 @@
 
 import React, { useRef, useState } from "react";
 import { Quote } from "lucide-react";
-import { testimonials } from "@/content/homepage";
+import { testimonialsData } from "@/content/testimonials-data"; 
 
 function Testimonials() {
   const scrollRef = useRef<HTMLDivElement | null>(null);
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [ activeIndex, setActiveIndex ] = useState(0);
 
-  const testimonialHighlight2 = [
-    "bg-theme-amber-900",
-    "bg-theme-green-900",
-    "bg-theme-purple-900",
-  ];
-
-  const testimonialHighlightIcon = [
-    "text-theme-amber-900",
-    "text-theme-green-900",
-    "text-theme-purple-900",
-  ];
-
-  const handleMobileScroll = () => {
+  // Update active dot based on scroll position
+  const handleScroll = () => {
     const container = scrollRef.current;
     if (!container) return;
 
-    const children = Array.from(container.children) as HTMLElement[];
+    const scrollPosition = container.scrollLeft;
+    const cardWidth = container.clientWidth / (window.innerWidth >= 768 ? 2 : 1);
+    const newIndex = Math.round(scrollPosition / cardWidth);
 
-    let closestIndex = 0;
-    let closestDistance = Infinity;
-
-    children.forEach((child, index) => {
-      const distance = Math.abs(child.offsetLeft - container.scrollLeft);
-
-      if (distance < closestDistance) {
-        closestDistance = distance;
-        closestIndex = index;
-      }
-    });
-
-    setActiveIndex(Math.min(closestIndex, testimonials.items.length - 1));
+    setActiveIndex(newIndex);
   };
 
   const scrollToIndex = (index: number) => {
     const container = scrollRef.current;
     if (!container) return;
 
-    const child = container.children[index] as HTMLElement | undefined;
+    const child = container.children[ index ] as HTMLElement | undefined;
     if (!child) return;
 
     container.scrollTo({
@@ -54,97 +33,108 @@ function Testimonials() {
     });
   };
 
-  const renderTestimonialCard = (
-    t: (typeof testimonials.items)[number],
-    index: number,
-    isMobile = false
-  ) => {
-    return (
-      <article
-        key={`${t.author}-${index}`}
-        className={`group relative z-0 flex min-h-[360px] flex-col justify-between overflow-hidden rounded-md bg-gray-100 px-6 py-7 transition-all duration-300 sm:px-8 sm:py-8 ${
-          isMobile ? "w-[78vw] max-w-[330px] shrink-0 snap-start" : ""
-        }`}
-      >
-        {/* Icon */}
-        <div className="relative h-8 w-8">
-          <Quote
-            className={`transition-transform duration-500 ease-out group-hover:scale-125 ${
-              testimonialHighlightIcon[index % testimonialHighlightIcon.length]
-            }`}
-          />
-        </div>
+  const handlePrev = () => {
+    scrollToIndex(Math.max(activeIndex - 1, 0));
+  };
 
-        {/* Quote */}
-        <blockquote className="mt-16 text-xl font-light leading-relaxed tracking-tight text-black sm:text-2xl">
-          “{t.quote}”
-        </blockquote>
-
-        {/* Author */}
-        <div className="mt-10 pt-6">
-          {/* Animated author line */}
-          <div className="mb-6 h-1 w-full overflow-hidden rounded-full">
-            <div
-              className={`h-full w-0 rounded-full transition-all duration-700 ease-out group-hover:w-full ${
-                testimonialHighlight2[index % testimonialHighlight2.length]
-              }`}
-            />
-          </div>
-
-          <div className="text-base font-medium text-black">{t.author}</div>
-
-          <div className="mt-1 text-sm text-black/50">{t.location}</div>
-        </div>
-      </article>
-    );
+  const handleNext = () => {
+    const maxIndex = testimonialsData.items.length - (window.innerWidth >= 768 ? 2 : 1);
+    scrollToIndex(Math.min(activeIndex + 1, maxIndex));
   };
 
   return (
-    <section className="bg-white py-20 sm:py-24 lg:py-28">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+    <section className="bg-white py-20 sm:py-24 lg:py-32 overflow-hidden">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+
         {/* Header */}
-        <div className="mb-14 max-w-4xl">
-          <h2 className="text-4xl font-light leading-tight tracking-tight text-black sm:text-5xl lg:text-6xl">
-            {testimonials.headline}
+        <div className="mb-16 lg:mb-20 text-center">
+          <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-serif text-[#222222] leading-tight">
+            {testimonialsData.headline}
           </h2>
         </div>
 
-        {/* Mobile: Swipe carousel */}
-        <div className="md:hidden">
+        {/* Carousel Container */}
+        <div className="relative">
           <div
             ref={scrollRef}
-            onScroll={handleMobileScroll}
-            className="flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pb-6 pr-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+            onScroll={handleScroll}
+            className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
           >
-            {testimonials.items.map((t, index) =>
-              renderTestimonialCard(t, index, true)
-            )}
-          </div>
+            {testimonialsData.items.map((item, index) => (
+              <article
+                key={item.id}
+                className="w-full md:w-1/2 min-w-full md:min-w-[50%] shrink-0 snap-start flex flex-col justify-between items-start px-4 sm:px-8 border-r border-gray-200 last:border-r-0"
+              >
+                <div>
+                  {/* Quote Icon */}
+                  <Quote
+                    className={`h-8 w-8 mb-6 opacity-60 ${item.iconColor}`}
+                    fill="currentColor"
+                    stroke="none"
+                  />
 
-          {/* Index indicator */}
-          <div className="mt-2 flex items-center justify-center gap-2">
-            {testimonials.items.map((_, index) => (
-              <button
-                key={index}
-                type="button"
-                aria-label={`Go to testimonial ${index + 1}`}
-                onClick={() => scrollToIndex(index)}
-                className={`h-2 rounded-full transition-all duration-300 ${
-                  activeIndex === index
-                    ? "w-8 bg-black"
-                    : "w-2 bg-black/20 hover:bg-black/40"
-                }`}
-              />
+                  {/* Quote Text */}
+                  <p className="text-[15px] sm:text-base text-gray-500 leading-relaxed font-light mb-12">
+                    "{item.quote}"
+                  </p>
+                </div>
+
+                {/* Author Info */}
+                <div className="mt-auto">
+                  <p className="text-[13px] font-bold text-[#1a1a1a]">
+                    {item.author}
+                  </p>
+                  <p className="text-[12px] text-gray-400 mt-1">
+                    {item.location}
+                  </p>
+                </div>
+              </article>
             ))}
           </div>
         </div>
 
-        {/* Desktop: Grid */}
-        <div className="hidden grid-cols-1 gap-6 md:grid md:grid-cols-3">
-          {testimonials.items.map((t, index) =>
-            renderTestimonialCard(t, index)
-          )}
+        {/* Carousel Controls */}
+        <div className="mt-16 flex items-center justify-center gap-6">
+          <button
+            onClick={handlePrev}
+            className="text-[13px] font-medium text-gray-500 hover:text-black transition-colors focus:outline-none disabled:opacity-40 disabled:cursor-not-allowed"
+            disabled={activeIndex === 0}
+          >
+            &lt; Prev
+          </button>
+
+          <div className="flex items-center gap-2.5">
+            {testimonialsData.items.map((_, index) => {
+              // Hide dots that exceed the viewable max index on desktop
+              const isDesktop = typeof window !== 'undefined' && window.innerWidth >= 768;
+              if (isDesktop && index > testimonialsData.items.length - 2) return null;
+
+              return (
+                <button
+                  key={index}
+                  onClick={() => scrollToIndex(index)}
+                  className={`w-1.5 h-1.5 rounded-full transition-colors ${activeIndex === index ? "bg-gray-400" : "bg-gray-200 hover:bg-gray-300"
+                    }`}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              );
+            })}
+          </div>
+
+          <button
+            onClick={handleNext}
+            className="text-[13px] font-medium text-gray-500 hover:text-black transition-colors focus:outline-none disabled:opacity-40 disabled:cursor-not-allowed"
+            // Disable next if we've reached the end
+            disabled={
+              typeof window !== 'undefined'
+                ? activeIndex >= testimonialsData.items.length - (window.innerWidth >= 768 ? 2 : 1)
+                : false
+            }
+          >
+            Next &gt;
+          </button>
         </div>
+
       </div>
     </section>
   );
