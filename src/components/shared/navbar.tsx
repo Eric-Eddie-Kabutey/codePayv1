@@ -151,7 +151,7 @@ function Navbar() {
           </Link>
           <Link
             href={navigation.primaryCTA.href}
-            className="inline-block border border-gray-300 bg-white px-5 py-2.5 text-sm font-semibold text-black transition-all hover:border-gray-800"
+            className="inline-block rounded-xl border border-white/25 bg-theme-blue-900 py-2 px-6 text-base font-medium text-black backdrop-blur-md transition-all duration-300 hover:border-transparent hover:bg-theme-purple-900 hover:text-[#071B2D]"
           >
             {navigation.primaryCTA.label}
           </Link>
@@ -223,7 +223,7 @@ function Navbar() {
               </Link>
               <Link
                 href={navigation.primaryCTA.href}
-                className="block w-full text-center rounded-xl border border-white/25 bg-theme-green-900 py-2 px-6 text-base font-medium text-black backdrop-blur-md transition-all duration-300 hover:border-transparent hover:bg-theme-purple-900 hover:text-[#071B2D] sm:min-w-[240px]"
+                className="block w-full text-center rounded-xl border border-white/25 bg-theme-blue-900 py-2 px-6 text-base font-medium text-black backdrop-blur-md transition-all duration-300 hover:border-transparent hover:bg-theme-purple-900 hover:text-[#071B2D] sm:min-w-[240px]"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {navigation.primaryCTA.label}
