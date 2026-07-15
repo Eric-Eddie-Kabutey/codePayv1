@@ -10,7 +10,7 @@ function Footer() {
   const col2Links = footer.columns.slice(half);
 
   return (
-    <footer className="bg-[#323232] w-full text-white border-t border-[#444444]">
+    <footer className="bg-gray-600 w-full text-black border-t border-[#444444]">
       <div className="max-w-[1440px] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-[#4a4a4a]">
 

@@ -15,7 +15,7 @@ function FooterCTA() {
 
       {/* Centered Content */}
       <div className="relative z-10 flex flex-col items-center text-center max-w-2xl px-4 mt-16 sm:mt-24">
-        <h2 className="text-4xl leading-tight tracking-tight text-[#1a1a1a] sm:text-5xl lg:text-6xl">
+        <h2 className="text-3xl leading-tight tracking-tight text-[#1a1a1a] sm:text-4xl lg:text-5xl">
           {/* {finalCTA.headline} */}
           
           Your Fintech. <br />
@@ -23,7 +23,7 @@ function FooterCTA() {
           Africa's Future.
         </h2>
 
-        <p className="mt-5 max-w-xl text-lg leading-relaxed text-[#222222] sm:text-xl lg:text-2xl">
+        <p className="mt-5 max-w-xl text-lg leading-relaxed text-[#222222] sm:text-xl lg:text-xl">
           {finalCTA.subheadline}
         </p>
 
@@ -31,7 +31,7 @@ function FooterCTA() {
         <div className="mt-8 flex justify-center gap-4 sm:gap-6 flex-wrap">         
           <Link
             href={finalCTA.primaryCTA.href}
-            className="group/link inline-flex items-center justify-between gap-6 bg-[#1a1a1a] text-white px-8 py-3.5 text-xs sm:text-sm font-bold uppercase tracking-widest hover:bg-black transition-colors rounded-xl"
+            className="group/link inline-flex items-center justify-between gap-6 bg-[#1a1a1a] text-white py-2 px-6 text-base font-medium tracking-widest hover:bg-black transition-colors rounded-xl"
           >            
             <span>{finalCTA.primaryCTA.label}</span>
             
@@ -39,20 +39,20 @@ function FooterCTA() {
               {/* Arrow entering */}
               <ArrowUpRight
                 className="text-theme-amber-900 absolute translate-y-5 -translate-x-5 text-app-secondary opacity-0 transition-all duration-500 ease-out group-hover/link:translate-x-0 group-hover/link:translate-y-0 group-hover/link:opacity-100"
-                size={28}
+                size={20}
               />
 
               {/* Arrow leaving */}
               <ArrowUpRight
                 className="absolute text-app-secondary transition-all duration-500 ease-out group-hover/link:translate-x-5 group-hover/link:-translate-y-5 group-hover/link:opacity-0"
-                size={28}
+                size={20}
               />
             </div>
           </Link>
 
           <Link
             href={finalCTA.secondaryCTA.href}
-            className="group/link inline-flex items-center justify-between gap-6 bg-[#1a1a1a] text-white px-8 py-3.5 text-xs sm:text-sm font-bold uppercase tracking-widest hover:bg-black transition-colors rounded-xl"
+            className="group/link inline-flex items-center justify-between gap-6 bg-[#1a1a1a] text-white py-2 px-6 text-base font-medium tracking-widest hover:bg-black transition-colors rounded-xl"
           >            
             <span>{finalCTA.secondaryCTA.label}</span>
 
@@ -60,13 +60,13 @@ function FooterCTA() {
               {/* Arrow entering */}
               <ArrowUpRight
                 className="text-theme-amber-900 absolute translate-y-5 -translate-x-5 text-app-secondary opacity-0 transition-all duration-500 ease-out group-hover/link:translate-x-0 group-hover/link:translate-y-0 group-hover/link:opacity-100"
-                size={28}
+                size={20}
               />
 
               {/* Arrow leaving */}
               <ArrowUpRight
                 className="absolute text-app-secondary transition-all duration-500 ease-out group-hover/link:translate-x-5 group-hover/link:-translate-y-5 group-hover/link:opacity-0"
-                size={28}
+                size={20}
               />
             </div>
           </Link>
