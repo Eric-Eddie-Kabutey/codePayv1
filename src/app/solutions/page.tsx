@@ -3,6 +3,16 @@ import Link from 'next/link';
 import Navbar from '@/components/shared/navbar';
 import { seo, hero, solutions } from '@/content/solutions';
 import type { Metadata } from 'next';
+import SolutionsHero from '@/components/solutions/solutions-hero';
+import PlatformWorks from '@/components/solutions/platform-works';
+import TemplatesCarousel from '@/components/solutions/template-carousel';
+import WhyChooseUs from '@/components/solutions/why-choose-us';
+import IntegrationsTable from '@/components/solutions/integration-table';
+import CustomerSupport from '@/components/solutions/customer-support';
+import SecurityCertifications from '@/components/solutions/security-certification';
+import FAQ from '@/components/solutions/faq';
+import SolutionsFooterCTA from '@/components/solutions/solutions-footer-cta';
+import ToolsLibrary from '@/components/solutions/tools-library';
 
 export const metadata: Metadata = {
   title: seo.title,
@@ -15,7 +25,28 @@ export default function SolutionsPage() {
       {/* Hero */}
       <div className="bg-white border-b border-neutral-100">
         <Navbar />
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 pt-12 pb-16">
+
+        <SolutionsHero />
+
+        <PlatformWorks />
+
+        <ToolsLibrary />
+
+        <TemplatesCarousel />
+
+        <WhyChooseUs />
+
+        <IntegrationsTable />
+
+        <CustomerSupport />
+
+        <SecurityCertifications />
+
+        <FAQ />
+
+        <SolutionsFooterCTA />
+
+        <section className="hidden max-w-7xl mx-auto px-4 sm:px-6 pt-12 pb-16">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-navy-900 leading-tight max-w-3xl">
             {hero.headline}
           </h1>
@@ -37,7 +68,7 @@ export default function SolutionsPage() {
       </div>
 
       {/* Solution sections */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20 space-y-0 divide-y divide-neutral-100">
+      <main className="hidden max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20 space-y-0 divide-y divide-neutral-100">
         {solutions.map((sol) => (
           <section key={sol.id} id={sol.slug} className="py-14 sm:py-16 scroll-mt-8">
             <div className="flex flex-col lg:flex-row gap-10 lg:gap-20">
@@ -101,7 +132,7 @@ export default function SolutionsPage() {
       </main>
 
       {/* CTA */}
-      <section className="bg-navy-900 py-16">
+      <section className="hidden bg-navy-900 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             Not sure which solution fits?
