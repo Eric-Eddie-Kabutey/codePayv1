@@ -3,7 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-import { adminLayers } from "@/content/homepage";
+import { features } from "@/content/homepage";
 
 function AdminLayers() {
   return (
@@ -19,17 +19,17 @@ function AdminLayers() {
           className="mb-16 max-w-5xl"
         >
           <h2 className="text-4xl font-light leading-tight tracking-tight text-black sm:text-5xl lg:text-6xl">
-            {adminLayers.headline}
+            {features.headline}
           </h2>
 
           <p className="mt-6 max-w-3xl text-lg leading-relaxed text-gray-700 sm:text-xl lg:text-2xl">
-            {adminLayers.body}
+            {features.body}
           </p>
         </motion.div>
 
         {/* Rows Container */}
         <div className="flex flex-col gap-6 sm:gap-8">
-          {adminLayers.rows.map((row, rowIndex) => (
+          {features.rows.map((row, rowIndex) => (
             <div key={row.id} className="flex flex-col lg:flex-row gap-6 sm:gap-8">
 
               {/* 1. Large Box (Left Half) */}

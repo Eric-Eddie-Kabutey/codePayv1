@@ -207,6 +207,68 @@ export const adminLayers = {
   ],
 };
 
+export const features = {
+  headline: 'Built for Every Layer of Your Operation',
+  body: "CodePay isn't just for end users. It's a complete operational ecosystem with five distinct administrative layers, each designed to give the right people the right level of control.",
+  rows: [
+    {
+      id: 'row-1',
+      largeBox: {
+        title: 'Multi-National by Design',
+        body: 'Launch in one country. Expand to twenty. No new codebase. No new infrastructure. Just invite a country admin and go.',
+        bg: "#218350",
+        text: "#ffffff",
+        buttonLabel: "Learn More About CodePay",
+        imageUrl: '/assets/images/FROG-MOC-1.webp',
+      },
+      smallBoxes: [
+        {
+          title: 'AI at the Core',
+          body: 'Our LLM-trained systems handle everything from customer support calls to fraud detection, automated KYC, and liveness verification.',
+          bg: "#F58120",
+          text: "#ffffff",
+          imageUrl: '/assets/images/FROG-MOC-1.webp', // Swap with a phone image
+        },
+        {
+          title: 'Blockchain + Cryptography',
+          body: 'Every transaction is secured by modern blockchain protocols and cryptographic encryption that meets the highest global standards.',
+          bg: "#C0EAD1",
+          text: "#000000",
+          imageUrl: '/assets/images/developer.svg', // Swap with a person/character image
+        }
+      ]
+    },
+    {
+      id: 'row-2',
+      largeBox: {
+        title: 'Built for Everyone',
+        body: 'From smartphone users to USSD-only phones, from literate professionals to first-time digital users. CodePay meets people where they are.',
+        bg: "#218350",
+        text: "#ffffff",
+        buttonLabel: "Manage Agents",
+        imageUrl: '/assets/images/build-for-everyone.webp',
+      },
+      smallBoxes: [
+        {
+          title: 'Users & Businesses',
+          body: 'End users who send, receive, save, and pay. Plus businesses using the platform for merchant payments, payroll, and financial management.',
+          bg: "#F58120",
+          text: "#ffffff",
+          imageUrl: '/assets/images/FROG-MOC-1.webp',
+        },
+        {
+          title: 'Ready to take control?',
+          body: 'Join our unified platform and start building your custom operational ecosystem today.',
+          bg: "#ffffff",
+          text: "#000000",
+          imageUrl: '/assets/images/frog-get-started.webp',
+          isCTA: true // Triggers the CTA button rendering
+        }
+      ]
+    }
+  ],
+};
+
 export const devTeaser = {
   headline: 'Built in .NET, Ready for Your Stack.',
   body: "CodePay's core is built on .NET — enterprise-grade, secure, and scalable. Our developer portal gives you everything you need to integrate, customize, and launch. Clean APIs, comprehensive documentation, and SDKs that let you go from idea to production faster than you thought possible.",
