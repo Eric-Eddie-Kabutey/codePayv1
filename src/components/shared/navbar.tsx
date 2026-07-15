@@ -92,7 +92,7 @@ function Navbar() {
                           <div
                             key={colIndex}
                             className={`flex-1 flex flex-col px-8 ${colIndex !== item.dropdownColumns.length - 1
-                                ? 'border-r-2 border-dotted border-gray-200'
+                                ? ''
                                 : ''
                               }`}
                           >
