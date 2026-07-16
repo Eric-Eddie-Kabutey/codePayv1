@@ -70,7 +70,7 @@ function Navbar() {
               {item.dropdownColumns ? (
                 <>
                   <button
-                    className={`flex items-center gap-1 px-4 text-sm xl:text-base font-medium transition-colors rounded-xl-none h-full ${openDropdown === item.id
+                    className={`flex items-center gap-1 px-4 text-sm xl:text-base font-serif font-medium transition-colors rounded-xl-none h-full ${openDropdown === item.id
                         ? 'bg-neutral-100 text-black'
                         : 'text-neutral-600 hover:text-black hover:bg-neutral-50'
                       }`}
@@ -98,7 +98,7 @@ function Navbar() {
                           >
                             {/* Section Heading with Underline */}
                             {col.heading && (
-                              <h4 className="text-[13px] font-semibold text-gray-400 uppercase tracking-wider mb-6 pb-2 border-b border-gray-300">
+                              <h4 className="text-[13px] font-serif font-thin text-gray-400 uppercase tracking-wider mb-6 pb-2 border-b border-gray-300 ">
                                 {col.heading}
                               </h4>
                             )}
@@ -112,7 +112,7 @@ function Navbar() {
                                   className="group block"
                                   onClick={() => setOpenDropdown(null)}
                                 >
-                                  <div className="text-[15px] font-medium text-black group-hover:text-theme-green-900 transition-colors">
+                                  <div className="text-[15px] font-serif font-medium text-black group-hover:text-theme-green-900 transition-colors">
                                     {sub.label}
                                   </div>
                                   {sub.description && (
@@ -132,7 +132,7 @@ function Navbar() {
               ) : (
                 <Link
                   href={item.href}
-                  className="flex items-center px-4 text-sm xl:text-base text-neutral-600 hover:text-black font-medium transition-colors rounded-xl-none hover:bg-neutral-50 h-full"
+                  className="flex items-center px-4 text-sm xl:text-base text-neutral-600 hover:text-black font-serif font-medium transition-colors rounded-xl-none hover:bg-neutral-50 h-full"
                 >
                   {item.label}
                 </Link>
@@ -145,13 +145,13 @@ function Navbar() {
         <div className="hidden lg:flex items-center gap-6">
           <Link
             href={navigation.secondaryCTA.href}
-            className="text-sm xl:text-base text-black hover:text-gray-600 transition-colors font-medium"
+            className="text-sm xl:text-base text-black hover:text-gray-600 transition-colors font-serif font-medium"
           >
             {navigation.secondaryCTA.label}
           </Link>
           <Link
             href={navigation.primaryCTA.href}
-            className="inline-block rounded-xl border border-white/25 bg-theme-blue-900 py-2 px-6 text-base font-medium text-black backdrop-blur-md transition-all duration-300 hover:border-transparent hover:bg-theme-purple-900 hover:text-[#071B2D]"
+            className="inline-block rounded-xl border border-white/25 bg-theme-blue-900 py-2 px-6 text-base font-serif font-medium text-black backdrop-blur-md transition-all duration-300 hover:border-transparent hover:bg-theme-purple-900 hover:text-[#071B2D]"
           >
             {navigation.primaryCTA.label}
           </Link>
@@ -205,7 +205,7 @@ function Navbar() {
                 ) : (
                   <Link
                     href={item.href}
-                    className="block py-4 text-base font-medium text-black"
+                      className="block py-4 text-base font-serif font-medium text-black"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.label}

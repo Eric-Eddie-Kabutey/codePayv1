@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Merriweather } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/shared/footer";
 
@@ -12,6 +12,12 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
+const mainFont = Merriweather({
+  subsets: [ 'latin' ],
+  weight: [ '300', '400', '700', '900' ],
+  variable: '--font-merriweather', 
+})
 
 export const metadata: Metadata = {
   title: {
@@ -54,7 +60,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} ${mainFont.variable} antialiased`}>
         {children}
         <Footer />
       </body>

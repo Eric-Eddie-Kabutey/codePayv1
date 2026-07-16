@@ -14,7 +14,7 @@ export const navigation = {
         {
           heading: null,
           items: [
-            { label: 'Platform', href: '/platform#platform', description: 'Explore how our platform packs many solutions in a single place' },
+            { label: 'Platform', href: '/platform#platform', description: 'Explore our all-in-one solutions platform.' },
             { label: 'How it works', href: '/platform#how-it-works', description: 'Discover how CodePay works' },
           ]
         },
@@ -28,8 +28,8 @@ export const navigation = {
         {
           heading: null,
           items: [
-            { label: 'Integration', href: '/platform#integration', description: 'See how effortlessly you can integrate CodePay' },
-            { label: 'Frequently Asked Questions', href: '/platform#faq', description: 'Find a comprehensive collection of resources designed to answer all your question' },
+            { label: 'Integration', href: '/platform#integration', description: 'Review our certifications and strict security.' },
+            { label: 'Frequently Asked Questions', href: '/platform#faq', description: 'Find resources to answer all your questions.' },
           ]
         }
       ],
@@ -42,27 +42,27 @@ export const navigation = {
         {
           heading: 'BY FEATURES',
           items: [
-            { label: 'Remittance Engine', href: '/solutions#remittance', description: 'Local and cross-border money movement across 15+ African countries' },
-            { label: 'Banking Suite', href: '/solutions#banking', description: 'Account, Card Management, Loan, Merchant Payments' },
-            { label: 'Agent Network', href: '/solutions#agents', description: 'Distributed cash network management at any scale.' },
-            { label: 'AI & Compliance', href: '/solutions#compliance', description: 'KYC, Liveness detection, fraud monitoring, and verification' },
-            { label: 'Access Channels', href: '/solutions#channels', description: 'USSD, WhatsApp, Mobile App, Web and Rest API' },
+            { label: 'Remittance Engine', href: '/solutions#remittance', description: 'Local & cross-border transfers in 15+ countries.' },
+            { label: 'Banking Suite', href: '/solutions#banking', description: 'Accounts, cards, loans, and merchant payments.' },
+            { label: 'Agent Network', href: '/solutions#agents', description: 'Manage distributed cash networks at any scale.' },
+            { label: 'AI & Compliance', href: '/solutions#compliance', description: 'KYC, fraud monitoring, and user verification.' },
+            { label: 'Access Channels', href: '/solutions#channels', description: 'USSD, WhatsApp, Mobile App, Web, and REST API.' },
           ]
         },
         {
           heading: 'BY USE CASE',
           items: [
             { label: 'For Startups', href: '/solutions#startups', description: 'Launch a fintech product in weeks, not years' },
-            { label: 'For Banks', href: '/solutions#banks', description: 'Add digital channels without replacing core banking' },
-            { label: 'For Remittance Companies', href: '/solutions#remittance', description: 'One platform for every corridor you serve' },
-            { label: 'For Agent Networks', href: '/solutions#agent-networks', description: 'Scale your agent network without scaling your team' },
-            { label: 'For Businesses', href: '/solutions#business', description: 'Payroll, bulk payments, and financial services for teams' },
+            { label: 'For Banks', href: '/solutions#banks', description: 'Add digital channels, keep your core banking.' },
+            { label: 'For Remittance Companies', href: '/solutions#remittance', description: 'One platform for every corridor you serve.' },
+            { label: 'For Agent Networks', href: '/solutions#agent-networks', description: 'Scale agent networks without scaling your team.' },
+            { label: 'For Businesses', href: '/solutions#business', description: 'Payroll, bulk payments, and team financial tools.' },
           ]
         },
         {
           heading: 'BY REGION',
           items: [
-            { label: 'Africa', href: '/solutions#africa', description: 'Easy to launch, scale or integrate - designed with Africa in mind for Africa.' },
+            { label: 'Africa', href: '/solutions#africa', description: 'Easily launch and scale. Built for Africa' },
           ]
         }
       ],

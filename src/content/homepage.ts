@@ -207,7 +207,7 @@ export const adminLayers = {
   ],
 };
 
-export const features = {
+export const features_old = {
   headline: 'Built for Every Layer of Your Operation',
   body: "CodePay isn't just for end users. It's a complete operational ecosystem with five distinct administrative layers, each designed to give the right people the right level of control.",
   rows: [
@@ -265,6 +265,45 @@ export const features = {
           isCTA: true // Triggers the CTA button rendering
         }
       ]
+    }
+  ],
+};
+export const features = {
+  headline: 'Built for Every Layer of Your Operation',
+  body: "CodePay isn't just for end users. It's a complete operational ecosystem with distinct administrative layers, each designed to give the right people the right level of control.",
+  cards: [
+    // --- ROW 1 (1 Big, 2 Small) ---
+    {
+      title: 'Multi National by Design',
+      body: 'Launch in one country. Expand to twenty. No new codebase. No new infrastructure. Just invite a country admin and go.',
+      bg: "#218350", text: "#ffffff", buttonLabel: "Learn More",
+      imageUrl: '/assets/images/FROG-MOC-1.webp',
+    },
+    {
+      title: 'AI at the Core',
+      body: 'Our LLM-trained systems handle everything from customer support calls to fraud detection, automated KYC, and liveness verification.',
+      bg: "#F58120", text: "#ffffff",
+      imageUrl: '/assets/images/FROG-MOC-1.webp', // Ideally a mobile UI mockup
+    },
+    {
+      title: 'Blockchain + Cryptography',
+      body: 'Every transaction is secured by modern blockchain protocols and cryptographic encryption that meets the highest global standards.',
+      bg: "#B2CDDE", text: "#000000",
+      imageUrl: '/assets/images/developer.svg', // Ideally a character illustration
+    },
+
+    // --- ROW 2 (2 Big) ---
+    {
+      title: 'Build for Everyone',
+      body: 'From smartphone users to USSD-only phones, from literate professionals to first-time digital users. CodePay meets people where they are.',
+      bg: "#E0E0E0", text: "#000000",
+      imageUrl: '/assets/images/FROG-MOC-1.webp',
+    },
+    {
+      title: 'Users & Businesses',
+      body: 'End users who send, receive, save, and pay. Plus businesses using the platform for merchant payments, payroll, and financial management.',
+      bg: "#C0EAD1", text: "#000000",
+      imageUrl: '/assets/images/FROG-MOC-1.webp',
     }
   ],
 };

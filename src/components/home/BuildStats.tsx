@@ -134,11 +134,11 @@ function BuildStats() {
           <Icon className="h-8 w-8 text-black/75 transition-transform duration-500 ease-out group-hover:scale-125" />
 
           <div className="mt-16">
-            <div className="text-4xl font-light capitalize tracking-tight text-black sm:text-5xl lg:text-6xl">
+            <div className="text-4xl font-serif font-light capitalize tracking-tight text-black sm:text-5xl lg:text-6xl">
               {item.value}
             </div>
 
-            <p className="mt-4 max-w-[18rem] text-base leading-relaxed text-gray-700 sm:text-lg">
+            <p className="mt-4 max-w-[18rem] text-base font-serif leading-relaxed text-gray-700 sm:text-lg">
               {item.label}
             </p>
           </div>
@@ -148,10 +148,10 @@ function BuildStats() {
   };
 
   return (
-    <section className="bg-white py-20 sm:py-24 lg:py-28">
+    <section className="bg-white py-20 sm:py-24 lg:py-28 font-serif">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="mb-14 max-w-4xl">
-          <h2 className="text-4xl font-light leading-tight tracking-tight text-black sm:text-5xl lg:text-6xl">
+          <h2 className="text-4xl  font-light leading-tight tracking-tight text-black sm:text-5xl lg:text-6xl">
             {stats.headline}
           </h2>
         </div>

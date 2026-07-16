@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { Logo } from "./logo";
 import { footer } from "@/content/footer";
+import { ChevronDown } from "lucide-react";
 
 function Footer() {
   // We dynamically split your data into two halves to fill Panel 2 & Panel 3
@@ -10,14 +11,13 @@ function Footer() {
   const col2Links = footer.columns.slice(half);
 
   return (
-    <footer className="bg-gray-600 w-full text-black border-t border-[#444444]">
+    <footer className="bg-gray-600 w-full text-black border-t border-[#848484]">
       <div className="max-w-[1440px] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-[#4a4a4a]">
 
-          {/* Panel 1: Brand, Socials & Language */}
+          {/* Panel 1: Brand, Socials, Language & Certifications */}
           <div className="p-8 lg:p-12 flex flex-col h-full">
             <Link href="/">
-              {/* Added brightness-0 invert to force the logo white automatically */}
               <Logo variant="wordmark" className="h-8 brightness-0 invert" />
             </Link>
 
@@ -46,15 +46,32 @@ function Footer() {
             {/* Language Dropdown */}
             <div className="mt-10">
               <label className="text-xs text-gray-400 block mb-2">Select your language</label>
-              <select className="w-full bg-transparent border border-gray-500 text-gray-200 text-sm rounded-xl px-3 py-2.5 focus:outline-none focus:border-white appearance-none cursor-pointer">
-                <option className="text-black">English</option>
-                <option className="text-black">French</option>
-              </select>
+
+              {/* Relative wrapper for custom arrow positioning */}
+              <div className="relative">
+                <select className="w-full bg-transparent border border-gray-500 text-gray-200 text-sm rounded-xl px-3 py-2.5 pr-10 focus:outline-none focus:border-white appearance-none cursor-pointer">
+                  <option className="text-black">English</option>
+                  <option className="text-black">French</option>
+                </select>
+
+                {/* Absolute positioned icon */}
+                <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
+                  <ChevronDown size={18} />
+                </div>
+              </div>
             </div>
 
-            <div className="mt-auto pt-16 text-xs text-gray-400">
-              {footer.copyright}
+            {/* Added: Compliance and Certifications Image block */}
+            <div className="mt-12">
+              <p className="text-sm text-gray-400 mb-4">Compliance and Certifications</p>
+              <img
+                src="/assets/images/compliance-badges.png" // Swap with your actual transparent badge image
+                alt="Compliance and Certifications"
+                className="w-full max-w-[280px] h-auto object-contain"
+                loading="lazy"
+              />
             </div>
+
           </div>
 
           {/* Panel 2: Links (First Half) */}
@@ -77,7 +94,7 @@ function Footer() {
 
           {/* Panel 3: Links (Second Half) */}
           <div className="p-8 lg:p-12 flex flex-col gap-10">
-            <h3 className="text-lg font-medium text-white mb-2">Platform</h3>
+            <h3 className="text-lg font-medium text-white mb-2">About Us</h3>
             {col2Links.map((col) => (
               <div key={col.heading}>
                 <ul className="space-y-4">
@@ -98,7 +115,7 @@ function Footer() {
             <h3 className="text-lg font-medium text-white mb-6">Contact</h3>
 
             <Link href="/contact" className="inline-block w-fit border border-gray-400 text-white px-6 py-2.5 text-xs font-bold tracking-wider rounded-xl uppercase hover:bg-white hover:text-black transition-colors mb-8">
-              TRY IT FOR FREE
+              REQUEST A DEMO
             </Link>
 
             <ul className="space-y-4 mb-16">
@@ -124,6 +141,33 @@ function Footer() {
                 </button>
               </form>
             </div>
+          </div>
+
+        </div>
+      </div>
+
+      {/* secondary footer */}
+      <div className="border-t border-[#4a4a4a] py-6">
+        <div className="mx-auto max-w-[1440px] px-8 lg:px-12 flex flex-col md:flex-row items-center justify-center gap-4 sm:gap-6 text-sm text-gray-400">
+
+          {/* Copyrights */}
+          <p>{footer.copyright}</p>
+
+          <span className="hidden md:inline text-gray-600">|</span>
+
+          {/* Privacy and Policy links with dividers */}
+          <div className="flex flex-wrap items-center justify-center md:justify-start gap-3 sm:gap-4">
+            {footer.legal?.map((item, index) => (
+              <React.Fragment key={item.label}>
+                <Link href={item.href} className="hover:text-white transition-colors">
+                  {item.label}
+                </Link>
+                {/* Render the divider on all except the last item */}
+                {index < footer.legal.length - 1 && (
+                  <span className="text-gray-600">|</span>
+                )}
+              </React.Fragment>
+            ))}
           </div>
 
         </div>

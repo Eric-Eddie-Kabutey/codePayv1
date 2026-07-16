@@ -74,7 +74,7 @@ function TrustAndIdentity() {
 
           {/* Centered Heading */}
           <div className="text-center mb-16 lg:mb-24">
-            <h2 className="mx-auto max-w-3xl text-4xl font-light leading-tight tracking-tight text-black sm:text-5xl lg:text-6xl">
+            <h2 className="mx-auto max-w-3xl text-4xl font-serif font-light leading-tight tracking-tight text-black sm:text-5xl lg:text-6xl">
               {whatIsCodePay.headline}
             </h2>
           </div>
@@ -84,7 +84,7 @@ function TrustAndIdentity() {
 
             {/* Left Column: Asset (Trusted Logos) */}
             <div className="flex flex-col items-center justify-center lg:border-r-2 lg:border-dotted lg:border-gray-300 lg:pr-16 py-4">
-              <h4 className="text-center text-lg sm:text-xl font-medium text-[#2d405e] mb-10">
+              <h4 className="text-center text-lg sm:text-xl font-serif font-medium text-[#2d405e] mb-10">
                 Trusted by businesses and developers across Ghana and beyond.
               </h4>
 
@@ -111,7 +111,7 @@ function TrustAndIdentity() {
                   return (
                     <div key={item.text} className="min-w-0">
                       <h3
-                        className={`text-5xl font-light leading-none tracking-tight sm:text-5xl lg:text-6xl ${stat.color}`}
+                        className={`text-5xl font-serif font-light leading-none tracking-tight sm:text-5xl lg:text-6xl ${stat.color}`}
                       >
                         {stat.target !== undefined ? (
                           <CountUpStat
@@ -123,7 +123,7 @@ function TrustAndIdentity() {
                         )}
                       </h3>
 
-                      <p className="mt-4 max-w-[12rem] text-lg leading-snug text-gray-700 sm:text-xl lg:text-2xl">
+                      <p className="mt-4 max-w-[12rem] text-lg font-serif leading-snug text-gray-700 sm:text-xl lg:text-2xl">
                         {item.text}
                       </p>
                     </div>

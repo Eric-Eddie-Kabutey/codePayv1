@@ -13,26 +13,26 @@ export const footer = {
         { label: 'AI Customer Support', href: '/products#compliance' },
       ],
     },
-    {
-      heading: 'Solutions',
-      links: [
-        { label: 'For Startups', href: '/solutions#startups' },
-        { label: 'For Banks', href: '/solutions#banks' },
-        { label: 'For Remittance Companies', href: '/solutions#remittance' },
-        { label: 'For Agents', href: '/solutions#agents' },
-        { label: 'For Businesses', href: '/solutions#business' },
-      ],
-    },
-    {
-      heading: 'Resources',
-      links: [
-        { label: 'Developer Documentation', href: '/developers' },
-        { label: 'API Reference', href: '/developers#api' },
-        { label: 'SDKs', href: '/developers#sdks' },
-        { label: 'Blog', href: '/blog' },
-        { label: 'Case Studies', href: '/blog' },
-      ],
-    },
+    // {
+    //   heading: 'Solutions',
+    //   links: [
+    //     { label: 'For Startups', href: '/solutions#startups' },
+    //     { label: 'For Banks', href: '/solutions#banks' },
+    //     { label: 'For Remittance Companies', href: '/solutions#remittance' },
+    //     { label: 'For Agents', href: '/solutions#agents' },
+    //     { label: 'For Businesses', href: '/solutions#business' },
+    //   ],
+    // },
+    // {
+    //   heading: 'Resources',
+    //   links: [
+    //     { label: 'Developer Documentation', href: '/developers' },
+    //     { label: 'API Reference', href: '/developers#api' },
+    //     { label: 'SDKs', href: '/developers#sdks' },
+    //     { label: 'Blog', href: '/blog' },
+    //     { label: 'Case Studies', href: '/blog' },
+    //   ],
+    // },
     {
       heading: 'Company',
       links: [
@@ -42,19 +42,23 @@ export const footer = {
         { label: 'Press Kit', href: '/about' },
       ],
     },
-    {
-      heading: 'Legal',
-      links: [
-        { label: 'Privacy Policy', href: '#' },
-        { label: 'Terms of Service', href: '#' },
-        { label: 'Security', href: '#' },
-        { label: 'Compliance', href: '#' },
-        { label: 'Cookie Policy', href: '#' },
-      ],
-    },
+    // {
+    //   heading: 'Legal',
+    //   links: [
+    //     { label: 'Privacy Policy', href: '#' },
+    //     { label: 'Terms of Service', href: '#' },
+    //     { label: 'Security', href: '#' },
+    //     { label: 'Compliance', href: '#' },
+    //     { label: 'Cookie Policy', href: '#' },
+    //   ],
+    // },
   ],
 
-  legal: [],
+  legal: [ { label: 'Privacy Policy', href: '#' },
+      { label: 'Terms of Service', href: '#' },
+      { label: 'Security', href: '#' },
+      { label: 'Compliance', href: '#' },
+        { label: 'Cookie Policy', href: '#' },],
 
   disclaimer: '',
 
