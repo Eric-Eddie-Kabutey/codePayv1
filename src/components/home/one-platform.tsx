@@ -174,7 +174,7 @@ function OnePlatform() {
       <div className="flex items-center justify-end mb-6 lg:mb-8">
         <button
           onClick={() => setShowAll(!showAll)}
-          className="inline-flex items-center justify-center rounded-xl border border-gray-300 bg-white px-6 py-2 text-sm font-semibold text-gray-800 shadow-sm transition-colors hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-200"
+          className="inline-flex items-center justify-center rounded-xl border border-gray-300 bg-white px-6 py-2 text-sm font-serif font-semibold text-gray-800 shadow-sm transition-colors hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-200"
         >
           {showAll ? "Show Less" : "See All"}
         </button>
@@ -189,10 +189,10 @@ function OnePlatform() {
           >
             {/* Text Content */}
             <div className="z-10 relative">
-              <h2 className="text-white text-3xl font-bold mb-4 leading-tight tracking-tight">
+              <h2 className="text-white text-3xl font-serif font-bold mb-4 leading-tight tracking-tight">
                 {card.title}
               </h2>
-              <p className="text-white/95 text-[15px] sm:text-base leading-snug pr-2">
+              <p className="text-white/95 text-[15px] sm:text-base font-serif leading-snug pr-2">
                 {card.description}
               </p>
             </div>

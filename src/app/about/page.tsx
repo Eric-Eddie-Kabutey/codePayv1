@@ -3,6 +3,13 @@ import Link from 'next/link';
 import Navbar from '@/components/shared/navbar';
 import { seo, hero, story, mission, values, technology, presence, careersCTA } from '@/content/about';
 import type { Metadata } from 'next';
+import AboutHero from '@/components/about-us/about-hero';
+import AboutUs from '@/components/about-us/about-us';
+import StackedCards from '@/components/about-us/stacked-cards';
+import LeadershipTeam from '@/components/about-us/leadership';
+import SecurityCompliance from '@/components/about-us/security-complaince';
+import MoreAbout from '@/components/about-us/more-about';
+import CtaSection from '@/components/about-us/cta-section';
 
 export const metadata: Metadata = {
   title: seo.title,
@@ -14,7 +21,23 @@ export default function AboutPage() {
     <div>
       <div className="bg-navy-900">
         <Navbar />
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 pt-16 pb-24">
+
+        <AboutHero />
+
+        <AboutUs />
+
+        <StackedCards />
+
+        <LeadershipTeam />
+
+        <SecurityCompliance />
+
+        <MoreAbout />
+
+        <CtaSection />
+
+
+        <section className="hidden hero max-w-7xl mx-auto px-4 sm:px-6 pt-16 pb-24">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight max-w-3xl">
             {hero.headline}
           </h1>
@@ -22,7 +45,7 @@ export default function AboutPage() {
         </section>
       </div>
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20 space-y-20">
+      <main className="hidden max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20 space-y-20">
 
         {/* Story */}
         <section className="max-w-3xl">

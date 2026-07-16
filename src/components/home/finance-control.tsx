@@ -21,21 +21,21 @@ function AdminLayers() {
     >
       {/* Text Content */}
       <div className={`relative z-10 max-w-lg ${textMargin}`}>
-        <h3 className="mb-4 text-2xl sm:text-3xl font-bold leading-tight" style={{ color: card.text }}>
+        <h3 className="mb-4 text-2xl sm:text-3xl font-serif font-bold leading-tight" style={{ color: card.text }}>
           {card.title}
         </h3>
-        <p className="mb-8 text-[15px] sm:text-base leading-relaxed opacity-95" style={{ color: card.text }}>
+        <p className="mb-8 text-[15px] sm:text-base font-serif leading-relaxed opacity-95" style={{ color: card.text }}>
           {card.body}
         </p>
 
         {card.buttonLabel && (
-          <button className="inline-block rounded-xl bg-white px-6 py-3 text-sm sm:text-base font-bold shadow-sm transition-colors hover:bg-gray-100" style={{ color: card.bg }}>
+          <button className="inline-block rounded-xl bg-white px-6 py-3 text-sm sm:text-base font-serif font-bold shadow-sm transition-colors hover:bg-gray-100" style={{ color: card.bg }}>
             {card.buttonLabel}
           </button>
         )}
 
         {card.isCTA && (
-          <button className="inline-flex items-center gap-2 rounded-xl bg-[#218350] px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-black shadow-sm">
+          <button className="inline-flex items-center gap-2 rounded-xl bg-[#218350] px-6 py-3 text-sm font-serif font-semibold text-white transition-all hover:bg-black shadow-sm">
             Get Started
             <ArrowUpRight className="h-4 w-4" />
           </button>
@@ -66,10 +66,10 @@ function AdminLayers() {
           transition={{ duration: 0.7, ease: "easeOut" }}
           className="mb-16 max-w-5xl"
         >
-          <h2 className="text-4xl font-light leading-tight tracking-tight text-black sm:text-5xl lg:text-6xl">
+          <h2 className="text-4xl font-serif font-extralight leading-tight tracking-tight text-black sm:text-5xl lg:text-6xl">
             {features.headline}
           </h2>
-          <p className="mt-6 max-w-3xl text-lg leading-relaxed text-gray-700 sm:text-xl lg:text-2xl">
+          <p className="mt-6 max-w-3xl font-serif font-extralight text-lg leading-relaxed text-gray-700 sm:text-xl lg:text-2xl">
             {features.body}
           </p>
         </motion.div>

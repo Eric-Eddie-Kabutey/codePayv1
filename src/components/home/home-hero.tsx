@@ -11,11 +11,11 @@ function HomeHero() {
         {/* Text Area */}
         <div className="max-w-4xl space-y-7 z-10">
           {/* Kept original font sizes & weight */}
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-light leading-tight">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-serif font-light leading-tight">
             {hero.headline}
           </h1>
           {/* Kept original font sizes */}
-          <p className="text-lg sm:text-xl lg:text-2xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl lg:text-2xl text-gray-700 font-serif leading-relaxed max-w-3xl mx-auto">
             {hero.subheadline}
           </p>
 
@@ -23,7 +23,7 @@ function HomeHero() {
           <div className="flex flex-col sm:flex-row justify-center gap-3 pt-4">
             <Link
               href={hero.primaryCTA.href}
-              className="group/link inline-flex items-center justify-between gap-6 rounded-xl border border-white/25 bg-theme-blue-900 py-2 px-6 text-base font-medium text-black backdrop-blur-md transition-all duration-300 hover:border-transparent hover:bg-theme-purple-900 hover:text-[#071B2D] sm:min-w-[240px]"
+              className="group/link inline-flex items-center justify-between gap-6 rounded-xl border border-white/25 bg-theme-blue-900 py-2 px-6 text-base font-serif font-medium text-black backdrop-blur-md transition-all duration-300 hover:border-transparent hover:bg-theme-purple-900 hover:text-[#071B2D] sm:min-w-[240px] "
             >
               <span>{hero.primaryCTA.label}</span>
 
@@ -44,7 +44,7 @@ function HomeHero() {
 
             <Link
               href={hero.secondaryCTA.href}
-              className="group/link inline-flex items-center justify-between gap-6 rounded-xl border border-white/25 bg-theme-green-900 py-2 px-6 text-base font-medium text-black backdrop-blur-md transition-all duration-300 hover:border-transparent hover:bg-theme-purple-900 hover:text-[#071B2D] sm:min-w-[240px]"
+              className="group/link inline-flex items-center justify-between gap-6 rounded-xl border border-white/25 bg-theme-green-900 py-2 px-6 text-base font-serif font-medium text-black backdrop-blur-md transition-all duration-300 hover:border-transparent hover:bg-theme-purple-900 hover:text-[#071B2D] sm:min-w-[240px]"
             >
               <span>{hero.secondaryCTA.label}</span>
 
