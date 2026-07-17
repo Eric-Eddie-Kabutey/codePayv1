@@ -75,15 +75,15 @@ export const navigation = {
         {
           heading: null,
           items: [
-            { label: 'Our Company', href: '/about#company', description: 'Learn more about CodePay history' },
-            { label: 'Why CodePay', href: '/about#why', description: 'Find out why businesses around the world trust us' },
+            { label: 'Our Company', href: '/about/company', description: 'Learn more about CodePay history' },
+            { label: 'Why CodePay', href: '/about/why', description: 'Find out why businesses around the world trust us' },
           ]
         },
         {
           heading: null,
           items: [
-            { label: 'Careers', href: '/about#careers', description: 'Visit our career page and unfold your potential' },
-            { label: 'Press', href: '/about#press', description: 'Browse our news feed and enrich your stories with our dedicated press kit' },
+            { label: 'Careers', href: '/about/careers', description: 'Visit our career page and unfold your potential' },
+            { label: 'Press', href: '/about/press', description: 'Browse our news feed and enrich your stories with our dedicated press kit' },
           ]
         }
       ],
