@@ -76,7 +76,7 @@ export const navigation = {
           heading: null,
           items: [
             { label: 'Our Company', href: '/about/company', description: 'Learn more about CodePay history' },
-            { label: 'Why CodePay', href: '/about/why', description: 'Find out why businesses around the world trust us' },
+            { label: 'Why CodePay', href: '/about/why-codepay', description: 'Find out why businesses around the world trust us' },
           ]
         },
         {
