@@ -16,12 +16,10 @@ export const metadata: Metadata = {
   description: seo.description,
 };
 
-export default function AboutPage() {
+export default function CompanyPage() {
   return (
     <div>
-      <div className="bg-navy-900">
-        <Navbar />
-
+      <div className="bg-navy-900">        
         <AboutHero />
 
         <AboutUs />
